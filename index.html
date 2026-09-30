@@ -162,15 +162,6 @@
             align-items: flex-start;
         }
 
-        .card-icon {
-            font-size: 32px;
-            background-color: #f0f8ff;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #155BCB; 
-            flex-shrink: 0;
-        }
-
         .card h3 {
             margin-bottom: 10px;
             font-size: 18px;
@@ -184,6 +175,16 @@
         .card.warning {
             border-left: 4px solid #FCCC04;
             background-color: #fffdf5;
+        }
+
+        .card-icon {
+            font-size: 32px;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #FCCC04; 
+            color: #FCCC04;
+            flex-shrink: 0;
         }
 
         /* Painel Direito - Recibo e Botão de Pagamento */
@@ -282,7 +283,7 @@
             color: #155BCB;
         }
 
-        /* Estilos do Botão de Pagamento */
+        /* Estilos do Botão e Áreas Dinâmicas */
         .payment-footer {
             padding: 20px;
             border-top: 1px solid #e0e0e0;
@@ -300,6 +301,7 @@
             font-size: 16px;
             font-weight: bold;
             border-radius: 5px;
+            border: none;
             text-decoration: none;
             transition: background-color 0.3s ease;
             cursor: pointer;
@@ -310,11 +312,27 @@
             text-decoration: none;
             color: white; 
         }
-        
-        .qr-code-container {
-            display: none;
-            margin-top: 20px;
-            text-align: center;
+
+        .btn-azul {
+            background-color: #155BCB;
+        }
+
+        .btn-azul:hover {
+            background-color: #0d4094;
+        }
+
+        .input-file-container {
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .input-file-container input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 13px;
         }
 
         /* Responsividade para Celulares e Tablets */
@@ -391,7 +409,7 @@
             <h1>Pagamento Simples Nacional - MEI</h1>
             <p>Regularize os débitos do Microempreendedor Individual</p>
 
-            <div class="card">
+            <div class="card" style="border: 1px solid #e0e0e0; background-color: #fff;">
                 <div>
                     <h3>DAS-MEI - Documento de Arrecadação</h3>
                     <p>Emita e pague o Documento de Arrecadação do Simples Nacional para Microempreendedor Individual</p>
@@ -399,7 +417,7 @@
             </div>
 
             <div class="card warning">
-                <div class="card-icon" style="border-color: #FCCC04; background-color: #fff; color: #FCCC04;">⚠️</div>
+                <div class="card-icon">⚠️</div>
                 <div>
                     <h3>Aviso de Pendência</h3>
                     <p>Identificamos débitos em seu cadastro MEI. A regularização é necessária para manter o CNPJ ativo e continuar utilizando os serviços digitais do governo federal.</p>
@@ -431,42 +449,88 @@
                     </li>
                     <li class="step-item">
                         <div class="step-number">2</div>
-                        <div class="step-text">Você será redirecionado para o ambiente de checkout seguro.</div>
+                        <div class="step-text">Escaneie o QR Code PIX com o aplicativo do seu banco.</div>
                     </li>
                     <li class="step-item">
                         <div class="step-number">3</div>
-                        <div class="step-text">Escolha a sua forma de pagamento preferida (Pix ou Boleto).</div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">4</div>
-                        <div class="step-text">Conclua a transação para regularizar seus débitos MEI.</div>
+                        <div class="step-text">Após pagar, clique em confirmar e anexe seu comprovante.</div>
                     </li>
                 </ul>
             </div>
             
-            <!-- ÁREA DO BOTÃO DE PAGAMENTO -->
+            <!-- ÁREA DINÂMICA DE PAGAMENTO E COMPROVANTE -->
             <div class="payment-footer">
-                <a class="btn-pagar" id="pay-btn">
-                    PAGAR AGORA
-                </a>
-            </div>
-            <div class="qr-code-container" id="qr-code-container">
-                <img id="qr-code" src="" alt="QR Code PIX">
+                
+                <!-- Passo 1: Botão Pagar Agora -->
+                <div id="step-1">
+                    <button class="btn-pagar" id="btn-pagar-agora">PAGAR AGORA</button>
+                </div>
+
+                <!-- Passo 2: QR Code e Botão "Já Paguei" -->
+                <div id="step-2" style="display: none; text-align: center;">
+                    <p style="font-weight: bold; font-size: 14px; margin-bottom: 10px; color: #333;">Escaneie o QR Code abaixo:</p>
+                    <img id="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?data=00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517%20Leonardo%20Sebas6014RIO%20DE%20JANEIRO62070503***630479DE&size=200x200" alt="QR Code PIX" style="border: 5px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px;">
+                    <button class="btn-pagar btn-azul" id="btn-ja-pago" style="margin-top: 15px;">JÁ REALIZEI O PAGAMENTO</button>
+                </div>
+
+                <!-- Passo 3: Envio de Comprovante -->
+                <div id="step-3" style="display: none; text-align: center;">
+                    <p style="font-weight: bold; font-size: 14px; margin-bottom: 5px; color: #333;">Quase lá!</p>
+                    <p style="font-size: 13px; color: #666;">Por favor, anexe o comprovante de pagamento para baixarmos seu débito.</p>
+                    
+                    <div class="input-file-container">
+                        <input type="file" id="arquivo-comprovante" accept="image/*,.pdf">
+                    </div>
+                    
+                    <button class="btn-pagar" id="btn-enviar-comprovante">ENVIAR COMPROVANTE</button>
+                </div>
+
+                <!-- Passo 4: Sucesso -->
+                <div id="step-4" style="display: none; text-align: center; padding: 20px 0;">
+                    <div style="font-size: 48px; color: #00A859; margin-bottom: 10px;">✅</div>
+                    <h3 style="color: #00A859; margin-bottom: 10px;">Sucesso!</h3>
+                    <p style="font-size: 14px; color: #333; line-height: 1.5;">O seu comprovante foi enviado e está em análise. Seus débitos serão regularizados no sistema em até 24 horas úteis.</p>
+                </div>
+
             </div>
         </aside>
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+    <!-- Script de controle de fluxo de telas -->
     <script>
-        const pixKey = "00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517 Leonardo Sebas6014RIO DE JANEIRO62070503***630479DE";
-        const qr = new QRious({
-            element: document.getElementById('qr-code'),
-            value: pixKey,
-            size: 200
+        // Elementos das etapas
+        const step1 = document.getElementById('step-1');
+        const step2 = document.getElementById('step-2');
+        const step3 = document.getElementById('step-3');
+        const step4 = document.getElementById('step-4');
+
+        // Botões de ação
+        const btnPagarAgora = document.getElementById('btn-pagar-agora');
+        const btnJaPago = document.getElementById('btn-ja-pago');
+        const btnEnviarComprovante = document.getElementById('btn-enviar-comprovante');
+        const inputComprovante = document.getElementById('arquivo-comprovante');
+
+        // Ação 1: Mostrar QR Code
+        btnPagarAgora.addEventListener('click', function() {
+            step1.style.display = 'none';
+            step2.style.display = 'block';
         });
 
-        document.getElementById('pay-btn').addEventListener('click', function() {
-            document.getElementById('qr-code-container').style.display = 'block';
+        // Ação 2: Mostrar tela de envio de comprovante
+        btnJaPago.addEventListener('click', function() {
+            step2.style.display = 'none';
+            step3.style.display = 'block';
+        });
+
+        // Ação 3: Validar arquivo e mostrar tela de sucesso
+        btnEnviarComprovante.addEventListener('click', function() {
+            if (inputComprovante.files.length === 0) {
+                alert("Por favor, selecione o arquivo do seu comprovante de pagamento antes de enviar.");
+                return;
+            }
+            step3.style.display = 'none';
+            step4.style.display = 'block';
         });
     </script>
 </body>

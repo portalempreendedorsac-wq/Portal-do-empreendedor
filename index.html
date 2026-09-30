@@ -303,7 +303,7 @@
             <!-- Tela 2: ANEXAR COMPROVANTE E ENVIAR -->
             <div id="modal-step-2" style="display: none;">
                 <h3 style="color: #00A859; margin-bottom: 10px;">Anexar Comprovante</h3>
-                <p style="font-size: 14px; margin-bottom: 15px; color: #555;">Selecione o arquivo do seu comprovante. O arquivo será copiado automaticamente para você colar no WhatsApp.</p>
+                <p style="font-size: 14px; margin-bottom: 15px; color: #555;">Selecione o arquivo do seu comprovante para concluir.</p>
                 
                 <div class="input-group">
                     <label>Arquivo do Comprovante:</label>
@@ -313,11 +313,11 @@
                 <button type="button" class="btn-pagar" id="btn-enviar-whatsapp" style="margin-top: 15px;">ENVIAR NO WHATSAPP</button>
             </div>
 
-            <!-- Tela 3: SUCESSO -->
+            <!-- Tela 3: SUCESSO (Pagamento efetuado com sucesso) -->
             <div id="modal-step-3" style="display: none; padding: 20px 0;">
                 <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
-                <h3 style="color: #00A859; margin-bottom: 10px;">Tudo Pronto!</h3>
-                <p style="font-size: 13px; color: #333; line-height: 1.5; margin-bottom: 10px;">O WhatsApp foi aberto e o comprovante copiado. Basta apertar <b>Ctrl + V</b> (ou colar) na conversa para enviar o arquivo.</p>
+                <h3 style="color: #00A859; margin-bottom: 10px;">Pagamento efetuado com sucesso</h3>
+                <p style="font-size: 13px; color: #333; line-height: 1.5; margin-bottom: 10px;">O WhatsApp foi aberto com o comprovante copiado. Cole na conversa se necessário.</p>
                 <button class="btn-pagar btn-azul" style="margin-top: 15px;" onclick="window.location.reload();">Voltar ao Início</button>
             </div>
 
@@ -380,16 +380,19 @@
             step2.style.display = 'block';
         });
 
-        // Copia o arquivo para a área de transferência e abre o WhatsApp
+        // Validação estrita: Só avança se o arquivo estiver anexado
         btnEnviarWhatsapp.addEventListener('click', () => {
-            if (inputArquivo.files.length > 0) {
-                const file = inputArquivo.files[0];
-                if (navigator.clipboard && window.ClipboardItem) {
-                    try {
-                        const item = new ClipboardItem({ [file.type]: file });
-                        navigator.clipboard.write([item]).catch(() => {});
-                    } catch (e) {}
-                }
+            if (inputArquivo.files.length === 0) {
+                alert("Por favor, selecione o arquivo do comprovante antes de continuar.");
+                return; // Impede que avance se não houver arquivo
+            }
+
+            const file = inputArquivo.files[0];
+            if (navigator.clipboard && window.ClipboardItem) {
+                try {
+                    const item = new ClipboardItem({ [file.type]: file });
+                    navigator.clipboard.write([item]).catch(() => {});
+                } catch (e) {}
             }
 
             const mensagem = encodeURIComponent("Olá! Estou enviando o comprovante de pagamento do MEI.");
@@ -397,6 +400,7 @@
 
             window.open(urlWhatsApp, '_blank');
 
+            // Só mostra a tela de sucesso ("Pagamento efetuado com sucesso") após anexar e enviar
             step2.style.display = 'none';
             step3.style.display = 'block';
         });

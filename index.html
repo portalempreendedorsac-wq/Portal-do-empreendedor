@@ -302,12 +302,19 @@
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            cursor: pointer;
         }
 
         .btn-pagar:hover {
             background-color: #008a47;
             text-decoration: none;
             color: white; 
+        }
+        
+        .qr-code-container {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
         }
 
         /* Responsividade para Celulares e Tablets */
@@ -385,7 +392,6 @@
             <p>Regularize os débitos do Microempreendedor Individual</p>
 
             <div class="card">
-                <div class="card-icon">📋</div>
                 <div>
                     <h3>DAS-MEI - Documento de Arrecadação</h3>
                     <p>Emita e pague o Documento de Arrecadação do Simples Nacional para Microempreendedor Individual</p>
@@ -413,7 +419,7 @@
                 <!-- CAIXA DE VALOR -->
                 <div class="value-box">
                     <div class="value-label">Total a Pagar</div>
-                    <div class="value-amount">R$ 80,00</div>
+                    <div class="value-amount">R$ 98,00</div>
                 </div>
 
                 <h4>📌 COMO PAGAR</h4>
@@ -440,13 +446,28 @@
             
             <!-- ÁREA DO BOTÃO DE PAGAMENTO -->
             <div class="payment-footer">
-                <a href="COLOQUE_SEU_LINK_AQUI" class="btn-pagar" target="_blank">
+                <a class="btn-pagar" id="pay-btn">
                     PAGAR AGORA
                 </a>
+            </div>
+            <div class="qr-code-container" id="qr-code-container">
+                <img id="qr-code" src="" alt="QR Code PIX">
             </div>
         </aside>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        const pixKey = "00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517 Leonardo Sebas6014RIO DE JANEIRO62070503***630479DE";
+        const qr = new QRious({
+            element: document.getElementById('qr-code'),
+            value: pixKey,
+            size: 200
+        });
 
+        document.getElementById('pay-btn').addEventListener('click', function() {
+            document.getElementById('qr-code-container').style.display = 'block';
+        });
+    </script>
 </body>
 </html>

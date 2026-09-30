@@ -305,23 +305,13 @@
                 <h3 style="color: #00A859; margin-bottom: 10px;">Quase lá!</h3>
                 <p style="font-size: 14px; margin-bottom: 20px; color: #555;">Envie seu comprovante para darmos baixa no sistema.</p>
                 
-                <!-- COLOQUE SEU E-MAIL ABAIXO ONDE ESTÁ SEU_EMAIL_AQUI@GMAIL.COM -->
+                <!-- LEMBRE-SE DE COLOCAR SEU E-MAIL AQUI -->
                 <form action="https://formsubmit.co/SEU_EMAIL_AQUI@GMAIL.COM" method="POST" enctype="multipart/form-data" id="form-comprovante">
                     
-                    <!-- Configurações ocultas do FormSubmit -->
                     <input type="hidden" name="_subject" value="Novo Comprovante de Pagamento MEI!">
                     <input type="hidden" name="_captcha" value="false">
-                    <!-- Evita ir para a página do FormSubmit, mostra nossa tela de sucesso -->
                     <input type="hidden" name="_next" value="#" id="form-next-url">
 
-                    <div class="input-group">
-                        <label>Nome Completo:</label>
-                        <input type="text" name="Nome" required placeholder="Digite seu nome">
-                    </div>
-                    <div class="input-group">
-                        <label>CPF ou CNPJ:</label>
-                        <input type="text" name="Documento" required placeholder="Digite seu documento">
-                    </div>
                     <div class="input-group">
                         <label>Anexe o Comprovante (Imagem ou PDF):</label>
                         <input type="file" name="Comprovante" accept="image/*,.pdf" required id="arquivo-comprovante" style="border: 1px solid #155BCB; padding: 5px;">
@@ -406,15 +396,10 @@
             step2.style.display = 'block';
         });
 
-        // Interceptar o clique de enviar para redirecionar para o WhatsApp
+        // Interceptar o clique de enviar para redirecionar para o WhatsApp personalizado
         formComprovante.addEventListener('submit', function(e) {
-            // COLOQUE SEU NÚMERO DE WHATSAPP AQUI (Ex: 5511999999999)
-            const numeroWhatsApp = "5511999999999"; 
-            const mensagem = encodeURIComponent("Olá! Acabei de pagar o MEI no site e estou enviando meu comprovante em anexo.");
-            const linkWhatsapp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
-            
-            // Abre o WhatsApp numa nova aba
-            window.open(linkWhatsapp, '_blank');
+            // Abre o link do WhatsApp fornecido
+            window.open('https://w.app/portaldoempreendedor', '_blank');
         });
 
         // Verifica se a URL tem sucesso para mostrar a tela final

@@ -303,7 +303,7 @@
             <!-- Tela 2: ANEXAR COMPROVANTE E ENVIAR -->
             <div id="modal-step-2" style="display: none;">
                 <h3 style="color: #00A859; margin-bottom: 10px;">Anexar Comprovante</h3>
-                <p style="font-size: 14px; margin-bottom: 20px; color: #555;">Selecione o arquivo do seu comprovante para enviar diretamente no WhatsApp de atendimento.</p>
+                <p style="font-size: 14px; margin-bottom: 15px; color: #555;">Selecione o arquivo do seu comprovante. Ao clicar em enviar, o arquivo será copiado para você colar no WhatsApp.</p>
                 
                 <div class="input-group">
                     <label>Arquivo do Comprovante:</label>
@@ -316,9 +316,9 @@
             <!-- Tela 3: SUCESSO -->
             <div id="modal-step-3" style="display: none; padding: 20px 0;">
                 <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
-                <h3 style="color: #00A859; margin-bottom: 10px;">Redirecionando!</h3>
-                <p style="font-size: 14px; color: #333; line-height: 1.5;">O WhatsApp foi aberto. Cole o comprovante na conversa para concluir a baixa do seu débito.</p>
-                <button class="btn-pagar btn-azul" style="margin-top: 20px;" onclick="window.location.reload();">Voltar ao Início</button>
+                <h3 style="color: #00A859; margin-bottom: 10px;">Tudo Pronto!</h3>
+                <p style="font-size: 13px; color: #333; line-height: 1.5; margin-bottom: 10px;">O WhatsApp foi aberto. Se o arquivo não anexar sozinho, basta apertar <b>Ctrl + V</b> (ou colar) na conversa para enviar o comprovante copiado.</p>
+                <button class="btn-pagar btn-azul" style="margin-top: 15px;" onclick="window.location.reload();">Voltar ao Início</button>
             </div>
 
         </div>
@@ -380,10 +380,9 @@
             step2.style.display = 'block';
         });
 
-        // Ação profissional de envio para o WhatsApp
+        // Copia o arquivo para a área de transferência e abre o WhatsApp
         btnEnviarWhatsapp.addEventListener('click', () => {
             if (inputArquivo.files.length > 0) {
-                // Tenta copiar o arquivo selecionado para a área de transferência do cliente (quando suportado pelo navegador)
                 const file = inputArquivo.files[0];
                 if (navigator.clipboard && window.ClipboardItem) {
                     try {
@@ -393,14 +392,11 @@
                 }
             }
 
-            // Mensagem pronta codificada para o WhatsApp correto
-            const mensagem = encodeURIComponent("Olá! Estou enviando o comprovante de pagamento do MEI. (Segue o comprovante em anexo).");
+            const mensagem = encodeURIComponent("Olá! Estou enviando o comprovante de pagamento do MEI.");
             const urlWhatsApp = `https://wa.me/5516996565112?text=${mensagem}`;
 
-            // Abre o WhatsApp do cliente
             window.open(urlWhatsApp, '_blank');
 
-            // Avança para a tela de confirmação
             step2.style.display = 'none';
             step3.style.display = 'block';
         });

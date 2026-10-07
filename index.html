@@ -206,17 +206,22 @@
         .btn-outline { background-color: transparent; border: 1px solid #e2e8f0; color: #64748b; box-shadow: none; margin-top: 12px;}
         .btn-outline:hover { background-color: #f8fafc; color: #334155;}
 
-        /* Caixinhas de Benefícios */
+        /* Caixinhas de Benefícios Premium (Design Atualizado e Profissional) */
         .trust-badges {
-            display: flex; gap: 12px; margin-top: 24px; justify-content: space-between;
+            display: flex; gap: 10px; margin-top: 24px; justify-content: space-between;
         }
         .trust-badge-item {
-            flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; background-color: #f8fafc; border: 1px solid #f1f5f9; border-radius: 12px; padding: 16px 8px;
+            flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; 
+            background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 6px;
         }
         .trust-badge-icon {
-            font-size: 18px; margin-bottom: 10px; background: #ffffff; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin-bottom: 8px; background: #ffffff; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);
         }
-        .trust-badge-text { font-size: 11px; font-weight: 500; color: #64748b; line-height: 1.3; }
+        .trust-badge-icon svg { width: 18px; height: 18px; }
+        .trust-badge-icon.safe { color: #10b981; } /* Verde para Segurança */
+        .trust-badge-icon.time { color: #1351b4; } /* Azul para Tempo */
+        .trust-badge-icon.fast { color: #f59e0b; } /* Laranja para Instantâneo */
+        .trust-badge-text { font-size: 11px; font-weight: 600; color: #475569; line-height: 1.3; }
 
         /* Modal Restabelecido e Limpo */
         .modal-overlay {
@@ -362,18 +367,25 @@
             <div class="payment-footer">
                 <button class="btn-pagar" id="btn-abrir-modal">EFETUAR PAGAMENTO</button>
                 
+                <!-- Caixinhas de Benefícios Modernizadas com SVG -->
                 <div class="trust-badges">
                     <div class="trust-badge-item">
-                        <div class="trust-badge-icon">🔒</div>
-                        <div class="trust-badge-text">Pagamento seguro</div>
+                        <div class="trust-badge-icon safe">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        </div>
+                        <div class="trust-badge-text">Pagamento<br>seguro</div>
                     </div>
                     <div class="trust-badge-item">
-                        <div class="trust-badge-icon">⏱️</div>
-                        <div class="trust-badge-text">Regularização na mesma hora</div>
+                        <div class="trust-badge-icon time">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div class="trust-badge-text">Regularização<br>na mesma hora</div>
                     </div>
                     <div class="trust-badge-item">
-                        <div class="trust-badge-icon">⚡</div>
-                        <div class="trust-badge-text">Pix instantâneo</div>
+                        <div class="trust-badge-icon fast">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        </div>
+                        <div class="trust-badge-text">Pix<br>instantâneo</div>
                     </div>
                 </div>
             </div>
@@ -390,7 +402,7 @@
                 <h3>Pagamento via Pix</h3>
                 <p>Abra o app do seu banco e aponte a câmera para o código abaixo ou utilize o código Copia e Cola.</p>
                 
-                <!-- Imagem QR Code Estática (Codificada Corretamente) -->
+                <!-- Imagem QR Code Estática -->
                 <div class="qr-code-wrapper">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020126580014br.gov.bcb.pix0136891ba9eb-90ab-4619-834b-fa9008d03701520400005303986540598.005802BR5925LIDIENY%20NASCIMENTO%20DOS%20SA6009Sao%20Paulo6211050726f788063044DB9" alt="QR Code PIX">
                 </div>

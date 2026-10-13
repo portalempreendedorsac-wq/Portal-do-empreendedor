@@ -40,7 +40,7 @@
             color: #64748b;
         }
 
-        /* Cabeçalho Principal (Com Logo Gov.br Restaurada) */
+        /* Cabeçalho Principal (Com Logo Gov.br Oficial) */
         .header {
             background-color: #ffffff;
             display: flex;
@@ -206,7 +206,7 @@
         .btn-outline { background-color: transparent; border: 1px solid #e2e8f0; color: #64748b; box-shadow: none; margin-top: 12px;}
         .btn-outline:hover { background-color: #f8fafc; color: #334155;}
 
-        /* Caixinhas de Benefícios Premium (Design Atualizado e Profissional) */
+        /* Caixinhas de Benefícios Modernizadas com SVG */
         .trust-badges {
             display: flex; gap: 10px; margin-top: 24px; justify-content: space-between;
         }
@@ -218,12 +218,12 @@
             margin-bottom: 8px; background: #ffffff; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);
         }
         .trust-badge-icon svg { width: 18px; height: 18px; }
-        .trust-badge-icon.safe { color: #10b981; } /* Verde para Segurança */
-        .trust-badge-icon.time { color: #1351b4; } /* Azul para Tempo */
-        .trust-badge-icon.fast { color: #f59e0b; } /* Laranja para Instantâneo */
+        .trust-badge-icon.safe { color: #10b981; } 
+        .trust-badge-icon.time { color: #1351b4; } 
+        .trust-badge-icon.fast { color: #f59e0b; } 
         .trust-badge-text { font-size: 11px; font-weight: 600; color: #475569; line-height: 1.3; }
 
-        /* Modal Restabelecido e Limpo */
+        /* Modal e Áreas de Pagamento */
         .modal-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.4); backdrop-filter: blur(5px); z-index: 1000; justify-content: center; align-items: center; padding: 20px;
         }
@@ -282,7 +282,7 @@
         <a href="#">Ir para o conteúdo</a>
     </div>
 
-    <!-- Cabeçalho Corrigido com Logo Gov.br Oficial e Colorida -->
+    <!-- Cabeçalho com Logo Gov.br -->
     <header class="header">
         <div class="logo-container">
             <div style="font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 900; letter-spacing: -1.5px; display: flex; align-items: center;">
@@ -359,7 +359,7 @@
                 <h4 class="como-pagar-title">Como pagar</h4>
                 <ul class="step-list">
                     <li class="step-item"><div class="step-number">1</div><div class="step-text">Clique no botão "EFETUAR PAGAMENTO".</div></li>
-                    <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code ou utilize o Pix Copia e Cola no app do seu banco.</div></li>
+                    <li class="step-item"><div class="step-number">2</div><div class="step-text">Escaneie o QR Code ou utilize a chave Pix no app do seu banco.</div></li>
                     <li class="step-item"><div class="step-number">3</div><div class="step-text">Anexe o comprovante para validar o processo.</div></li>
                 </ul>
             </div>
@@ -400,17 +400,17 @@
             <!-- TELA 1: QR CODE ESTÁTICO E COPIA E COLA -->
             <div id="modal-step-1">
                 <h3>Pagamento via Pix</h3>
-                <p>Abra o app do seu banco e aponte a câmera para o código abaixo ou utilize o código Copia e Cola.</p>
+                <p>Abra o app do seu banco e aponte a câmera para o código abaixo ou utilize a chave Pix CNPJ.</p>
                 
-                <!-- Imagem QR Code Estática -->
+                <!-- Imagem QR Code Atualizada com CNPJ -->
                 <div class="qr-code-wrapper">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020126580014br.gov.bcb.pix0136891ba9eb-90ab-4619-834b-fa9008d03701520400005303986540598.005802BR5925LIDIENY%20NASCIMENTO%20DOS%20SA6009Sao%20Paulo6211050726f788063044DB9" alt="QR Code PIX">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=69.029.422%2F0001-96" alt="QR Code PIX">
                 </div>
                 
-                <!-- Chave Pix para Copiar -->
-                <label class="pix-label">Código Pix Copia e Cola:</label>
+                <!-- Chave Pix para Copiar (CNPJ) -->
+                <label class="pix-label">Chave Pix (CNPJ):</label>
                 <div class="copy-paste-box">
-                    <input type="text" class="copy-paste-text" id="pix-key" value="00020126580014br.gov.bcb.pix0136891ba9eb-90ab-4619-834b-fa9008d03701520400005303986540598.005802BR5925LIDIENY NASCIMENTO DOS SA6009Sao Paulo6211050726f788063044DB9" readonly>
+                    <input type="text" class="copy-paste-text" id="pix-key" value="69.029.422/0001-96" readonly>
                     <button class="btn-copiar" id="btn-copiar-pix" type="button">Copiar</button>
                 </div>
                 
